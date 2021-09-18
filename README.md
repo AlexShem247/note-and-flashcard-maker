@@ -12,7 +12,7 @@ Uses saved data and machine learning to decided which notes is best for the user
 The program will decided which tasks to give the user depending on the note. For a generic fact, a fill-in-the-blanks task may be used, which the program using saved data and patterns to decided what words should be answered. For more specific definitions, typing out the whole sentence might be more effective. <br><br>
 
 **Home Window**
-The home window organises all the saved data about the user into visual charts and graphs to display the users progress in a course and what they can work on.
+The home window organises all the saved data about the user into visual charts and graphs to display the users progress in a course and what they can work on.<br><br>
 
 _Available for PC_
 
