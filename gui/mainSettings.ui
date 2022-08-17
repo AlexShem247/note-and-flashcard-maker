@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>564</width>
+    <height>591</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Smart Retain</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #F6F7FB</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="minimumSize">
+        <size>
+         <width>50</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Neue Haas Grotesk Text Pro</family>
+         <pointsize>20</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+         <underline>false</underline>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: #0285c2;</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#0285c2;&quot;&gt;Change Settings&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string/>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="10" column="0" colspan="4">
+           <widget class="QLabel" name="label_12">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Typos Allowed per Definition:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0" colspan="4">
+           <widget class="QLabel" name="label_9">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Maximum Notes per Session:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="5">
+           <widget class="QLabel" name="textPathLabel">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>C:/Users/Alex/Documents</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0" colspan="5">
+           <widget class="QLabel" name="picPathLabel">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>C:/Users/Alex/Pictures</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="0" colspan="2">
+           <widget class="QLabel" name="label">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Delete Course:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0" colspan="2">
+           <widget class="QLabel" name="label_7">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Picture Path:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0" colspan="2">
+           <widget class="QLabel" name="label_5">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>Use custom Graphics Editor for editing Diagrams, rather than built-in one.</string>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="text">
+             <string>Graphics Editor Path:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2" colspan="3">
+           <widget class="QPushButton" name="chTextBtn">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	background-color: #0285c2;
+	border-radius: 10px;
+	color: #F6F7FB;
+}
+
+QPushButton:hover {
+    background-color: rgb(2, 106, 154);
+}</string>
+            </property>
+            <property name="text">
+             <string>Change</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2" colspan="3">
+           <widget class="QLineEdit" name="nameEdit">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: white;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: #303545;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="4">
+           <widget class="QSpinBox" name="nBox">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: white;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: #303545;</string>
+            </property>
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>50</number>
+            </property>
+            <property name="value">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2" colspan="3">
+           <widget class="QPushButton" name="chPicBtn">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	background-color: #0285c2;
+	border-radius: 10px;
+	color: #F6F7FB;
+}
+
+QPushButton:hover {
+    background-color: rgb(2, 106, 154);
+}</string>
+            </property>
+            <property name="text">
+             <string>Change</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0" colspan="4">
+           <widget class="QLabel" name="label_10">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Show Progress every n Notes</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="2" colspan="2">
+           <widget class="QPushButton" name="chEditorBtn">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>Use custom Graphics Editor for editing Diagrams, rather than built-in one.</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	background-color: #0285c2;
+	border-radius: 10px;
+	color: #F6F7FB;
+}
+
+QPushButton:hover {
+    background-color: rgb(2, 106, 154);
+}</string>
+            </property>
+            <property name="text">
+             <string>Change</string>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="2" colspan="3">
+           <widget class="QComboBox" name="deleteBox">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: white;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: #303545;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QLabel" name="label_3">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Textbook Path:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QLabel" name="label_2">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Nickname:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="4">
+           <widget class="QSpinBox" name="typoBox">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: white;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: #303545;</string>
+            </property>
+            <property name="minimum">
+             <number>0</number>
+            </property>
+            <property name="maximum">
+             <number>10</number>
+            </property>
+            <property name="value">
+             <number>3</number>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="4">
+           <widget class="QSpinBox" name="maxBox">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: white;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: #303545;</string>
+            </property>
+            <property name="minimum">
+             <number>2</number>
+            </property>
+            <property name="maximum">
+             <number>999</number>
+            </property>
+            <property name="value">
+             <number>50</number>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0" colspan="5">
+           <widget class="QLabel" name="editorPathLabel">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>Use custom Graphics Editor for editing Diagrams, rather than built-in one.</string>
+            </property>
+            <property name="text">
+             <string>C:/ProgramData/.../Programs/Accessories/Paint.lnk</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="4">
+           <widget class="QCheckBox" name="checkEditor">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>Use custom Graphics Editor for editing Diagrams, rather than built-in one.</string>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">padding-left:15px</string>
+            </property>
+            <property name="text">
+             <string>Use</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>10</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="backBtn">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Neue Haas Grotesk Text Pro</family>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	background-color: #00aeff;
+	border-radius: 15px;
+	color: #F6F7FB;
+}
+
+QPushButton:hover {
+    background-color: rgb(0, 154, 226);
+}</string>
+         </property>
+         <property name="text">
+          <string>Save Changes</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="restoreBtn">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Neue Haas Grotesk Text Pro</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	background-color: #697CFE;
+	border-radius: 15px;
+	color: #F6F7FB;
+}
+
+QPushButton:hover {
+    background-color: rgb(91, 108, 221);
+}</string>
+         </property>
+         <property name="text">
+          <string>Restore Default</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1221</width>
+    <height>663</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Smart Retain</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #F6F7FB</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QWidget" name="menuBar" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="courseNameLabel">
+           <property name="font">
+            <font>
+             <family>Neue Haas Grotesk Text Pro</family>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="settingsBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Neue Haas Grotesk Text Pro</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	background-color: #F6F7FB;
+	border-radius: 10px;
+	border-width: 0px;
+	color: #303545;
+	padding: 5px;
+	padding-left: 10px;
+}
+
+QPushButton:hover {
+    background-color: rgb(225, 225, 229);
+}</string>
+           </property>
+           <property name="text">
+            <string> Textbook Settings </string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,5">
+      <item>
+       <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0,0">
+        <item row="1" column="4">
+         <widget class="QWidget" name="widget" native="true">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: #303545;</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,1">
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Neue Haas Grotesk Text Pro</family>
+                 <pointsize>14</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color:#303545;
+border-width:0px;
+padding:75px</string>
+               </property>
+               <property name="text">
+                <string>  Read the Textbook&lt;br&gt;while Making Notes  </string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="addPDFBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Neue Haas Grotesk Text Pro</family>
+                 <pointsize>16</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+	background-color: #0285c2;
+	border-radius: 10px;
+	color: #F6F7FB;
+	border-width:0px
+}
+
+QPushButton:hover {
+    background-color: rgb(2, 106, 154);
+}</string>
+               </property>
+               <property name="text">
+                <string>Add PDF</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>10</width>
+            <height>5</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_2" rowstretch="0,0,0,0,0,0,0,0,0" rowminimumheight="0,0,0,0,0,0,0,0,0">
+        <item row="3" column="1" colspan="3">
+         <widget class="QLineEdit" name="questionEdit">
+          <property name="font">
+           <font>
+            <family>Neue Haas Grotesk Text Pro</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: #303545;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0" colspan="4">
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QToolButton" name="prevNoteBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>70</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+	background-color: #0285c2;
+	border-radius: 10px;
+	color: #F6F7FB;
+}
+
+QToolButton:hover {
+    background-color: rgb(2, 106, 154);
+}</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="arrowType">
+             <enum>Qt::LeftArrow</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>150</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QGroupBox{
+background-color: white;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: #303545;
+color:#303545;
+}</string>
+            </property>
+            <property name="title">
+             <string/>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <widget class="QSpinBox" name="noteNoBox">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Neue Haas Grotesk Text Pro</family>
+                 <pointsize>10</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-width: 0px;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>100</number>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="noteNoLabel">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Neue Haas Grotesk Text Pro</family>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-width:0px;
+background-color:white;</string>
+               </property>
+               <property name="text">
+                <string>/1</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="nextNoteBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>70</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QToolButton {
+	background-color: #0285c2;
+	border-radius: 10px;
+	color: #F6F7FB;
+}
+
+QToolButton:hover {
+    background-color: rgb(2, 106, 154);
+}</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="arrowType">
+             <enum>Qt::RightArrow</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <family>Neue Haas Grotesk Text Pro</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Select Subtopic:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="4">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Neue Haas Grotesk Text Pro</family>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox{
+	padding-top: 15px;
+	border:0;
+}</string>
+          </property>
+          <property name="title">
+           <string>Select Category - Hover Over Button for More Info</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_5">
+               <item>
+                <widget class="QPushButton" name="factBtn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Neue Haas Grotesk Text Pro</family>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>A Single Statement&lt;br&gt;of Information</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+	background-color: #255795;
+	border-radius: 15px;
+	padding: 5px;
+	color: #F6F7FB;
+}
+
+QPushButton:hover {
+    background-color:rgb(26, 63, 107);
+}
+
+QPushButton:checked {
+    background-color:rgb(26, 63, 107);
+	border: 1px solid black;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Fact</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="definitionBtn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Neue Haas Grotesk Text Pro</family>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>Information that should be&lt;br&gt;remembered Word by Word</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+	background-color: #00aeff;
+	border-radius: 15px;
+	color: #F6F7FB;
+}
+
+QPushButton:hover {
+    background-color: rgb(0, 154, 226);
+}
+
+QPushButton:checked {
+    background-color: rgb(0, 154, 226);
+	border: 1px solid black;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Definition</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="processBtn">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Neue Haas Grotesk Text Pro</family>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>An ordered step-by-step process</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+	background-color: #0285c2;
+	border-radius: 15px;
+	color: #F6F7FB;
+}
+
+QPushButton:hover {
+    background-color: rgb(2, 106, 154);
+}
+
+QPushButton:checked {
+    background-color: rgb(2, 106, 154);
+	border: 1px solid black;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Process</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <item>
+              <widget class="QPushButton" name="formulaBtn">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Neue Haas Grotesk Text Pro</family>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>A Mathematic Formula&lt;br&gt;that auto-generates questions.&lt;br&gt;Must contain at least 2 variables</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+	background-color: #00cac3;
+	border-radius: 15px;
+	color: #F6F7FB;
+}
+
+QPushButton:hover {
+    background-color: rgb(0, 173, 164);
+}
+
+QPushButton:checked {
+    background-color: rgb(0, 173, 164);
+	border: 1px solid black;
+}</string>
+               </property>
+               <property name="text">
+                <string>Formula</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="diagramBtn">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Neue Haas Grotesk Text Pro</family>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>Draw or fill out a diagram&lt;br&gt;to remember information</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+	background-color: #697CFE;
+	border-radius: 15px;
+	color: #F6F7FB;
+}
+
+QPushButton:hover {
+    background-color: rgb(91, 108, 221);
+}
+
+QPushButton:checked {
+    background-color: rgb(91, 108, 221);
+	border: 1px solid black;
+}</string>
+               </property>
+               <property name="text">
+                <string>Diagram</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="tableBtn">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Neue Haas Grotesk Text Pro</family>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>Memorise infomation&lt;br&gt;in a Table Format</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+	background-color: #02c37c;
+	border-radius: 15px;
+	padding: 5px;
+	color: #F6F7FB;
+}
+
+QPushButton:hover {
+    background-color: rgb(2, 163, 101);
+}
+
+QPushButton:checked {
+    background-color: rgb(2, 163, 101);
+	border: 1px solid black;
+}</string>
+               </property>
+               <property name="text">
+                <string>Table</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="4" column="4">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>10</width>
+            <height>10</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="answerLabel">
+          <property name="font">
+           <font>
+            <family>Neue Haas Grotesk Text Pro</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Answer:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0" colspan="4">
+         <widget class="QPushButton" name="createNoteBtn">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Neue Haas Grotesk Text Pro</family>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: #00aeff;
+	border-radius: 15px;
+	color: #F6F7FB;
+}
+
+QPushButton:hover {
+    background-color: rgb(0, 154, 226);
+}</string>
+          </property>
+          <property name="text">
+           <string>Create Note</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="questLabel">
+          <property name="font">
+           <font>
+            <family>Neue Haas Grotesk Text Pro</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Question:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1" colspan="3">
+         <widget class="QPlainTextEdit" name="answerEdit">
+          <property name="font">
+           <font>
+            <family>Neue Haas Grotesk Text Pro</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: #303545;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="2">
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <family>Neue Haas Grotesk Text Pro</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Select Topic:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2" colspan="2">
+         <widget class="QComboBox" name="topicCombo">
+          <property name="font">
+           <font>
+            <family>Neue Haas Grotesk Text Pro</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: #303545;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0" colspan="4">
+         <layout class="QHBoxLayout" name="buttonLayout">
+          <item>
+           <widget class="QPushButton" name="questDiagramBtn">
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	background-color: #697CFE;
+	border-radius: 10px;
+	color: #F6F7FB;
+}
+
+QPushButton:hover {
+    background-color: rgb(91, 108, 221);
+}</string>
+            </property>
+            <property name="text">
+             <string>Add Question Diagram</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="2" colspan="2">
+         <widget class="QComboBox" name="subtopicCombo">
+          <property name="font">
+           <font>
+            <family>Neue Haas Grotesk Text Pro</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: #303545;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="3">
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetFixedSize</enum>
+          </property>
+          <item>
+           <widget class="QPushButton" name="starBtn">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	border-radius: 15px;
+	background-color:rgb(231, 232, 236);
+}
+
+QPushButton:checked{
+	background-color:rgb(210, 211, 214);
+	border: 1px solid black;
+}
+
+QPushButton:hover {
+    background-color:rgb(210, 211, 214);
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="delBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Neue Haas Grotesk Text Pro</family>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	border-radius: 15px;
+	background-color:rgb(231, 232, 236);
+}
+
+QPushButton:hover {
+    background-color:rgb(210, 211, 214);
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="5" column="0" colspan="3">
+         <widget class="QLabel" name="infoLabel">
+          <property name="font">
+           <font>
+            <family>Neue Haas Grotesk Text Pro</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Press CTRL+B to make Highlighted Text Bold</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
