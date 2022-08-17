@@ -16,4 +16,4 @@ The home window organises all the saved data about the user into visual charts a
 
 _Available for PC_
 
-Program written in Python 3.9 and uses the PyQt GUI toolkit. Made in 2021
+Program written in Python 3.9 and uses the PyQt GUI toolkit. Made in 2022
