@@ -1,6 +1,6 @@
-# Note and Flashcard Maker by Alexander Shemaly
+#Smart Retain - Note Maker and Revision Software by Alexander Shemaly
 
-Note and Flashcard Maker allows users to create notes, view notes, learn notes and view performance in a certain course or subject.<br><br>
+Smart Retain allows users to create notes, view notes, learn notes and view performance in a certain course or subject.<br><br>
 
 **Create Notes Window**
 Displays input options to detailed label your note with options such as a question, answer, keywords, topic, subtopic and note type. <br>
