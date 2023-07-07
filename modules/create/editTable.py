@@ -24,7 +24,7 @@ class Window(qt.QMainWindow):
         self.twoWayTable = False
 
         # Create fonts
-        self.boldFont = QFont("Neue Haas Grotesk Text Pro")
+        self.boldFont = QFont("MS Shell Dlg 2")
         self.boldFont.setBold(True)
 
         # Get widgets

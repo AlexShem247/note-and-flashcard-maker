@@ -267,11 +267,11 @@ class Window(qt.QMainWindow):
 
         # Create widgets
         self.stepListWidget = qt.QListWidget()  # Create List Widget
-        self.stepListWidget.setFont(QFont("Neue Haas Grotesk Text Pro", 14))
+        self.stepListWidget.setFont(QFont("MS Shell Dlg 2", 14))
         self.stepListWidget.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
         self.tableWidget = qt.QTableWidget()  # Create Table Widget
-        self.tableWidget.setFont(QFont("Neue Haas Grotesk Text Pro", 14))
+        self.tableWidget.setFont(QFont("MS Shell Dlg 2", 14))
         header = self.tableWidget.horizontalHeader()
         header.setSectionResizeMode(qt.QHeaderView.ResizeToContents)
 
@@ -280,7 +280,7 @@ class Window(qt.QMainWindow):
         self.correctImage = qt.QLabel(self)
 
         # Create fonts
-        self.boldFont = QFont("Neue Haas Grotesk Text Pro")
+        self.boldFont = QFont("MS Shell Dlg 2")
         self.boldFont.setBold(True)
 
         # Bind Buttons
@@ -627,7 +627,7 @@ class Window(qt.QMainWindow):
 
                     # Add buttons
                     proceedBtn = qt.QPushButton(self, text=" Next Note ")
-                    proceedBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+                    proceedBtn.setFont(QFont("MS Shell Dlg 2", 16))
                     proceedBtn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                              "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
                     proceedBtn.setMaximumWidth(300)
@@ -636,7 +636,7 @@ class Window(qt.QMainWindow):
 
                     if self.blankWords:
                         objectBtn = qt.QPushButton(self, text=" Incorrect Marking ")
-                        objectBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+                        objectBtn.setFont(QFont("MS Shell Dlg 2", 16))
                         objectBtn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                                 "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
                         objectBtn.setMaximumWidth(300)
@@ -644,7 +644,7 @@ class Window(qt.QMainWindow):
                         self.buttonLayout.addWidget(objectBtn)
 
                     editBtn = qt.QPushButton(self, text=" Edit Note ")
-                    editBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+                    editBtn.setFont(QFont("MS Shell Dlg 2", 16))
                     editBtn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                           "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
                     editBtn.setMaximumWidth(300)
@@ -859,7 +859,7 @@ class Window(qt.QMainWindow):
 
         # Add buttons
         proceedBtn = qt.QPushButton(self, text=" Next Note ")
-        proceedBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+        proceedBtn.setFont(QFont("MS Shell Dlg 2", 16))
         proceedBtn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                  "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
         proceedBtn.setMaximumWidth(300)
@@ -871,7 +871,7 @@ class Window(qt.QMainWindow):
 
         if ans:
             objectBtn = qt.QPushButton(self, text=" Incorrect Marking ")
-            objectBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+            objectBtn.setFont(QFont("MS Shell Dlg 2", 16))
             objectBtn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                     "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
             objectBtn.setMaximumWidth(300)
@@ -879,7 +879,7 @@ class Window(qt.QMainWindow):
             self.buttonLayout.addWidget(objectBtn)
 
         editBtn = qt.QPushButton(self, text=" Edit Note ")
-        editBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+        editBtn.setFont(QFont("MS Shell Dlg 2", 16))
         editBtn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                               "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
         editBtn.setMaximumWidth(300)
@@ -908,7 +908,7 @@ class Window(qt.QMainWindow):
 
         # Add pass button
         btn = qt.QPushButton(self, text=" Pass ")
-        btn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+        btn.setFont(QFont("MS Shell Dlg 2", 16))
         btn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                           "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
         btn.setMaximumWidth(300)
@@ -953,7 +953,7 @@ class Window(qt.QMainWindow):
 
             # Add timer label
             label = qt.QLabel(self)
-            font = QFont("Neue Haas Grotesk Text Pro", 20)
+            font = QFont("MS Shell Dlg 2", 20)
             font.setBold(True)
             label.setFont(font)
             label.setAlignment(Qt.AlignHCenter)
@@ -1026,7 +1026,7 @@ class Window(qt.QMainWindow):
                 # Add buttons
                 self.answerEdit.show()
                 btn = qt.QPushButton(self, text=" Pass ")
-                btn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+                btn.setFont(QFont("MS Shell Dlg 2", 16))
                 btn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                   "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
                 btn.setMaximumWidth(300)
@@ -1052,7 +1052,7 @@ class Window(qt.QMainWindow):
                         note not in self.calcFormulaList:
                     # Enter formula question
                     btn = qt.QPushButton(self, text=" Pass ")
-                    btn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+                    btn.setFont(QFont("MS Shell Dlg 2", 16))
                     btn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                       "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
                     btn.setMaximumWidth(300)
@@ -1065,7 +1065,7 @@ class Window(qt.QMainWindow):
                     # Calculation question
                     self.calcFormulaList.append(self.currentNote)
                     btn = qt.QPushButton(self, text=" Pass ")
-                    btn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+                    btn.setFont(QFont("MS Shell Dlg 2", 16))
                     btn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                       "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
                     btn.setMaximumWidth(300)
@@ -1103,7 +1103,7 @@ class Window(qt.QMainWindow):
                     self.stepListWidget.setCurrentRow(0)
 
                     btn = qt.QPushButton(self, text=" Pass ")
-                    btn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+                    btn.setFont(QFont("MS Shell Dlg 2", 16))
                     btn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                       "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
                     btn.setMaximumWidth(300)
@@ -1113,7 +1113,7 @@ class Window(qt.QMainWindow):
                     # Fill in the blank question
                     self.fillProcessList.append(self.currentNote)
                     btn = qt.QPushButton(self, text=" Pass ")
-                    btn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+                    btn.setFont(QFont("MS Shell Dlg 2", 16))
                     btn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                       "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
                     btn.setMaximumWidth(300)
@@ -1129,7 +1129,7 @@ class Window(qt.QMainWindow):
             elif note["type"] == "Diagram":
                 # Add buttons
                 btn = qt.QPushButton(self, text=" Start Drawing ")
-                btn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+                btn.setFont(QFont("MS Shell Dlg 2", 16))
                 btn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                   "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
                 btn.setMaximumWidth(300)
@@ -1145,7 +1145,7 @@ class Window(qt.QMainWindow):
                 self.openTable(False)  # Draws table
 
                 btn = qt.QPushButton(self, text=" Pass ")
-                btn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+                btn.setFont(QFont("MS Shell Dlg 2", 16))
                 btn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                   "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
                 btn.setMaximumWidth(300)
@@ -1207,7 +1207,7 @@ class Window(qt.QMainWindow):
 
         # Add buttons
         proceedBtn = qt.QPushButton(self, text=" Next Note ")
-        proceedBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+        proceedBtn.setFont(QFont("MS Shell Dlg 2", 16))
         proceedBtn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                  "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
         proceedBtn.setMaximumWidth(300)
@@ -1219,7 +1219,7 @@ class Window(qt.QMainWindow):
 
         if not correct:
             objectBtn = qt.QPushButton(self, text=" Incorrect Marking ")
-            objectBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+            objectBtn.setFont(QFont("MS Shell Dlg 2", 16))
             objectBtn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                     "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
             objectBtn.setMaximumWidth(300)
@@ -1227,7 +1227,7 @@ class Window(qt.QMainWindow):
             self.buttonLayout.addWidget(objectBtn)
 
         editBtn = qt.QPushButton(self, text=" Edit Note ")
-        editBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+        editBtn.setFont(QFont("MS Shell Dlg 2", 16))
         editBtn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                               "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
         editBtn.setMaximumWidth(300)
@@ -1354,7 +1354,7 @@ class Window(qt.QMainWindow):
         vbox = qt.QVBoxLayout()
         drawnImageLabel = qt.QLabel(self)
         drawnImageLabel.setText("Your Diagram")
-        drawnImageLabel.setFont(QFont("Neue Haas Grotesk Text Pro", 14))
+        drawnImageLabel.setFont(QFont("MS Shell Dlg 2", 14))
         drawnImageLabel.setStyleSheet("font-weight: bold")
         drawnImageLabel.setAlignment(Qt.AlignCenter)
         vbox.addWidget(drawnImageLabel)
@@ -1364,7 +1364,7 @@ class Window(qt.QMainWindow):
         vbox = qt.QVBoxLayout()
         correctImageLabel = qt.QLabel(self)
         correctImageLabel.setText("Correct Diagram")
-        correctImageLabel.setFont(QFont("Neue Haas Grotesk Text Pro", 14))
+        correctImageLabel.setFont(QFont("MS Shell Dlg 2", 14))
         correctImageLabel.setStyleSheet("font-weight: bold")
         correctImageLabel.setAlignment(Qt.AlignCenter)
         vbox.addWidget(correctImageLabel)
@@ -1404,7 +1404,7 @@ class Window(qt.QMainWindow):
 
         # Add buttons
         correctBtn = qt.QPushButton(self, text=" Answer Correct ✅ ")
-        correctBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+        correctBtn.setFont(QFont("MS Shell Dlg 2", 16))
         correctBtn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                  "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
         correctBtn.setMaximumWidth(300)
@@ -1412,7 +1412,7 @@ class Window(qt.QMainWindow):
         self.buttonLayout.addWidget(correctBtn)
 
         incorrectBtn = qt.QPushButton(self, text=" Answer Incorrect ❌ ")
-        incorrectBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+        incorrectBtn.setFont(QFont("MS Shell Dlg 2", 16))
         incorrectBtn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                    "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
         incorrectBtn.setMaximumWidth(300)
@@ -1420,7 +1420,7 @@ class Window(qt.QMainWindow):
         self.buttonLayout.addWidget(incorrectBtn)
 
         editBtn = qt.QPushButton(self, text=" Edit Note ")
-        editBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+        editBtn.setFont(QFont("MS Shell Dlg 2", 16))
         editBtn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                               "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
         editBtn.setMaximumWidth(300)
@@ -1461,7 +1461,7 @@ class Window(qt.QMainWindow):
 
         # Add buttons
         proceedBtn = qt.QPushButton(self, text=" Next Note ")
-        proceedBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+        proceedBtn.setFont(QFont("MS Shell Dlg 2", 16))
         proceedBtn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                                  "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
         proceedBtn.setMaximumWidth(300)
@@ -1472,7 +1472,7 @@ class Window(qt.QMainWindow):
         self.addAction(self.ReturnAction)
 
         editBtn = qt.QPushButton(self, text=" Edit Note ")
-        editBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 16))
+        editBtn.setFont(QFont("MS Shell Dlg 2", 16))
         editBtn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "
                               "#F6F7FB;}QPushButton:hover {background-color: rgb(2, 106, 154);}")
         editBtn.setStyleSheet("QPushButton {background-color: #0285c2;border-radius: 10px;color: "

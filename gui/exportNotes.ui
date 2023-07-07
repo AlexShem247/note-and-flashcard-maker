@@ -52,7 +52,7 @@
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>22</pointsize>
           <weight>50</weight>
           <bold>false</bold>
@@ -102,7 +102,7 @@ color:#303545;
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>16</pointsize>
          </font>
         </property>
@@ -129,7 +129,7 @@ QPushButton:hover {
        <widget class="QLabel" name="label_2">
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -151,7 +151,7 @@ QPushButton:hover {
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>16</pointsize>
          </font>
         </property>
@@ -178,7 +178,7 @@ QPushButton:hover {
        <widget class="QLabel" name="label_4">
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -201,7 +201,7 @@ QPushButton:hover {
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>16</pointsize>
          </font>
         </property>
@@ -228,7 +228,7 @@ QPushButton:hover {
        <widget class="QLabel" name="label_5">
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>

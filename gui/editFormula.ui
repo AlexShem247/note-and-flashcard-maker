@@ -51,7 +51,7 @@
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -68,7 +68,7 @@ border-color: #303545;</string>
        <widget class="QLabel" name="label_7">
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -87,7 +87,7 @@ border-color: #303545;</string>
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>20</pointsize>
          </font>
         </property>
@@ -117,7 +117,7 @@ QPushButton:hover {
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -140,7 +140,7 @@ border-color: #303545;</string>
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -164,7 +164,7 @@ QPushButton:hover {
        <widget class="QLabel" name="label_5">
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -190,7 +190,7 @@ QPushButton:hover {
        <widget class="QLabel" name="label_4">
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -209,7 +209,7 @@ QPushButton:hover {
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -226,7 +226,7 @@ border-color: #303545;</string>
        <widget class="QLabel" name="label_6">
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -245,7 +245,7 @@ border-color: #303545;</string>
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -262,7 +262,7 @@ border-color: #303545;</string>
        <widget class="QListWidget" name="termListWidget">
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -285,7 +285,7 @@ border-color: #303545;</string>
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -310,7 +310,7 @@ border-color: #303545;</string>
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>24</pointsize>
          </font>
         </property>
@@ -340,7 +340,7 @@ color:#0285c2;</string>
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -353,7 +353,7 @@ color:#0285c2;</string>
        <widget class="QLabel" name="label_3">
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -372,7 +372,7 @@ color:#0285c2;</string>
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>

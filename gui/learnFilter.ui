@@ -41,7 +41,7 @@
        </property>
        <property name="font">
         <font>
-         <family>Neue Haas Grotesk Text Pro</family>
+         <family>MS Shell Dlg 2</family>
          <pointsize>12</pointsize>
         </font>
        </property>
@@ -79,7 +79,7 @@ border-color: #303545;</string>
        </property>
        <property name="font">
         <font>
-         <family>Neue Haas Grotesk Text Pro</family>
+         <family>MS Shell Dlg 2</family>
          <pointsize>12</pointsize>
         </font>
        </property>
@@ -124,7 +124,7 @@ QToolButton:hover {
        </property>
        <property name="font">
         <font>
-         <family>Neue Haas Grotesk Text Pro</family>
+         <family>MS Shell Dlg 2</family>
          <pointsize>12</pointsize>
         </font>
        </property>
@@ -164,7 +164,7 @@ QToolButton:hover {
        </property>
        <property name="font">
         <font>
-         <family>Neue Haas Grotesk Text Pro</family>
+         <family>MS Shell Dlg 2</family>
          <pointsize>16</pointsize>
         </font>
        </property>
@@ -222,7 +222,7 @@ QPushButton:hover {
        </property>
        <property name="font">
         <font>
-         <family>Neue Haas Grotesk Text Pro</family>
+         <family>MS Shell Dlg 2</family>
          <pointsize>20</pointsize>
          <weight>50</weight>
          <bold>false</bold>
@@ -279,7 +279,7 @@ QPushButton:hover {
        </property>
        <property name="font">
         <font>
-         <family>Neue Haas Grotesk Text Pro</family>
+         <family>MS Shell Dlg 2</family>
          <pointsize>16</pointsize>
          <weight>75</weight>
          <bold>true</bold>
@@ -304,7 +304,7 @@ QPushButton:hover {
        </property>
        <property name="font">
         <font>
-         <family>Neue Haas Grotesk Text Pro</family>
+         <family>MS Shell Dlg 2</family>
          <pointsize>12</pointsize>
         </font>
        </property>
@@ -342,7 +342,7 @@ border-color: #303545;</string>
        </property>
        <property name="font">
         <font>
-         <family>Neue Haas Grotesk Text Pro</family>
+         <family>MS Shell Dlg 2</family>
          <pointsize>12</pointsize>
         </font>
        </property>
@@ -387,7 +387,7 @@ QToolButton:hover {
        </property>
        <property name="font">
         <font>
-         <family>Neue Haas Grotesk Text Pro</family>
+         <family>MS Shell Dlg 2</family>
          <pointsize>12</pointsize>
         </font>
        </property>
@@ -426,7 +426,7 @@ QToolButton:hover {
          </property>
          <property name="font">
           <font>
-           <family>Neue Haas Grotesk Text Pro</family>
+           <family>MS Shell Dlg 2</family>
            <pointsize>12</pointsize>
           </font>
          </property>
@@ -468,7 +468,7 @@ QPushButton:hover {
          </property>
          <property name="font">
           <font>
-           <family>Neue Haas Grotesk Text Pro</family>
+           <family>MS Shell Dlg 2</family>
            <pointsize>12</pointsize>
           </font>
          </property>

@@ -116,20 +116,20 @@ class CreateWindow(qt.QMainWindow):
         # Create widgets
         self.formatBtn = qt.QPushButton(self)
         self.formatBtn.setText("Format")
-        self.formatBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 10))
+        self.formatBtn.setFont(QFont("MS Shell Dlg 2", 10))
         self.formatBtn.setStyleSheet("QPushButton {background-color: #00cac3;border-radius: 10px;color: "
                                      "#F6F7FB;}QPushButton:hover {background-color: rgb(0, 173, 164);}")
         self.formatBtn.setParent(None)
 
         self.answerDiaBtn = qt.QPushButton(self)
         self.answerDiaBtn.setText("Add Correct Answer Diagram")
-        self.answerDiaBtn.setFont(QFont("Neue Haas Grotesk Text Pro", 10))
+        self.answerDiaBtn.setFont(QFont("MS Shell Dlg 2", 10))
         self.answerDiaBtn.setStyleSheet("QPushButton {background-color: #00cac3;border-radius: 10px;color: "
                                         "#F6F7FB;}QPushButton:hover {background-color: rgb(0, 173, 164);}")
         self.answerDiaBtn.setParent(None)
 
         # Create font
-        self.normalFont = QFont("Neue Haas Grotesk Text Pro")
+        self.normalFont = QFont("MS Shell Dlg 2")
         self.normalFont.setPointSize(12)
         self.monospaceFont = QFont("Consolas")
         self.monospaceFont.setPointSize(12)

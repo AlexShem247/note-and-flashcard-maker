@@ -7,6 +7,7 @@ import sys
 import json
 from getpass import getuser
 import ctypes
+import traceback
 
 import modules.createCourse as createCourse
 import modules.homeScreen as homeScreen
@@ -46,11 +47,11 @@ if os.path.isfile("images/temp/courseNameChange.json"):
 
 
 def show_exception_and_exit(exc_type, exc_value, tb):
-    ctypes.windll.user32.MessageBoxW(0, f"{exc_type.__name__}: {exc_value}", "An Unexpected Error has occurred",
-                                     0x10)
+    ctypes.windll.user32.MessageBoxW(0, f"{exc_type.__name__}: {exc_value}", "An Unexpected Error has occurred", 0x10)
 
 
-sys.excepthook = show_exception_and_exit
+# sys.excepthook = show_exception_and_exit # TODO Add this before pushing
+sys.excepthook = lambda exc_type, exc_value, tb: (traceback.print_exception(exc_type, exc_value, tb), sys.exit(-1))
 
 
 class Window(qt.QMainWindow):
@@ -100,7 +101,7 @@ class Window(qt.QMainWindow):
         msg = qt.QMessageBox()
         msg.setWindowTitle("About Smart Retain")
         msg.setText("Smart Retain is a Note Maker and Revision Software written by Alexander Shemaly "
-                    "2021-2022.\n\nClick one of the courses in the scroll box or press 'Create Course' to begin "
+                    "2021-2023.\n\nClick one of the courses in the scroll box or press 'Create Course' to begin "
                     "learning.")
         msg.setIcon(qt.QMessageBox.Information)
         msg.addButton("Ok", qt.QMessageBox.YesRole)
@@ -157,7 +158,7 @@ class Window(qt.QMainWindow):
             QPushButton:hover {{
             background-color:{highlightColor};
             }}""")
-            btn.setFont(QFont("Neue Haas Grotesk Text Pro", 18))
+            btn.setFont(QFont("MS Shell Dlg 2", 18))
             btn.clicked.connect(lambda: self.openWindow(homeScreen.Window, sendBtnText=True))
 
             self.courseBox.addWidget(btn)

@@ -71,7 +71,7 @@
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -149,7 +149,7 @@ border-color: #303545;</string>
        <widget class="QPushButton" name="selectBtn">
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -173,7 +173,7 @@ QPushButton:hover {
        <widget class="QLabel" name="label_2">
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -186,7 +186,7 @@ QPushButton:hover {
        <widget class="QLabel" name="label_3">
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -215,7 +215,7 @@ QPushButton:hover {
        <widget class="QLineEdit" name="nameEdit">
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -248,7 +248,7 @@ border-color: #303545;</string>
        <widget class="QPushButton" name="saveBtn">
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>18</pointsize>
          </font>
         </property>
@@ -323,7 +323,7 @@ QPushButton:hover {
         </property>
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>14</pointsize>
          </font>
         </property>
@@ -348,7 +348,7 @@ QPushButton:hover {
        <widget class="QLabel" name="titleLabel">
         <property name="font">
          <font>
-          <family>Neue Haas Grotesk Text Pro</family>
+          <family>MS Shell Dlg 2</family>
           <pointsize>20</pointsize>
           <weight>75</weight>
           <italic>false</italic>

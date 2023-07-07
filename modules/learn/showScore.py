@@ -97,7 +97,7 @@ class Window(qt.QMainWindow):
         axisX = QCategoryAxis()
         axisY = QCategoryAxis()
 
-        labelFont = QFont("Neue Haas Grotesk Text Pro")
+        labelFont = QFont("MS Shell Dlg 2")
         labelFont.setPixelSize(12)
 
         axisX.setLabelsFont(labelFont)

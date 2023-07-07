@@ -104,7 +104,7 @@ class Window(qt.QMainWindow):
         chart.createDefaultAxes()  # Create axis
         chart.setAnimationOptions(QChart.SeriesAnimations)  # Add animation
         chart.setTitle("Topics Covered")  # Set title
-        titleFont = QFont("Neue Haas Grotesk Text Pro")
+        titleFont = QFont("MS Shell Dlg 2")
         titleFont.setPointSize(12)
         titleFont.setBold(True)
         chart.setTitleFont(titleFont)
@@ -125,7 +125,7 @@ class Window(qt.QMainWindow):
         chart.addSeries(series)  # Add graph to chart
         chart.setAnimationOptions(QChart.SeriesAnimations)  # Add animation
         chart.setTitle("Progress over Time")
-        titleFont = QFont("Neue Haas Grotesk Text Pro")
+        titleFont = QFont("MS Shell Dlg 2")
         titleFont.setPointSize(12)
         titleFont.setBold(True)
         chart.setTitleFont(titleFont)
@@ -133,7 +133,7 @@ class Window(qt.QMainWindow):
         # Customise axis
         axisX = QCategoryAxis()
         axisY = QCategoryAxis()
-        labelFont = QFont("Neue Haas Grotesk Text Pro")
+        labelFont = QFont("MS Shell Dlg 2")
         labelFont.setPixelSize(12)
         axisX.setLabelsFont(labelFont)
         axisY.setLabelsFont(labelFont)

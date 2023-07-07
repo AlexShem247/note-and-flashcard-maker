@@ -54,7 +54,7 @@
             <widget class="QLabel" name="courseNameLabel">
              <property name="font">
               <font>
-               <family>Neue Haas Grotesk Text Pro</family>
+               <family>MS Shell Dlg 2</family>
                <pointsize>16</pointsize>
               </font>
              </property>
@@ -82,7 +82,7 @@
              </property>
              <property name="font">
               <font>
-               <family>Neue Haas Grotesk Text Pro</family>
+               <family>MS Shell Dlg 2</family>
                <pointsize>12</pointsize>
               </font>
              </property>
@@ -114,7 +114,7 @@ QPushButton:hover {
          <widget class="QLabel" name="label_10">
           <property name="font">
            <font>
-            <family>Neue Haas Grotesk Text Pro</family>
+            <family>MS Shell Dlg 2</family>
             <pointsize>24</pointsize>
             <weight>75</weight>
             <bold>true</bold>
@@ -161,7 +161,7 @@ color: #0285c2;</string>
             </property>
             <property name="font">
              <font>
-              <family>Neue Haas Grotesk Text Pro</family>
+              <family>MS Shell Dlg 2</family>
               <pointsize>16</pointsize>
              </font>
             </property>
@@ -187,7 +187,7 @@ QPushButton:hover {
          <widget class="QLabel" name="messageLabel">
           <property name="font">
            <font>
-            <family>Neue Haas Grotesk Text Pro</family>
+            <family>MS Shell Dlg 2</family>
             <pointsize>20</pointsize>
             <weight>75</weight>
             <bold>true</bold>
@@ -202,7 +202,7 @@ QPushButton:hover {
          <widget class="QProgressBar" name="progressBar">
           <property name="font">
            <font>
-            <family>Neue Haas Grotesk Text Pro</family>
+            <family>MS Shell Dlg 2</family>
            </font>
           </property>
           <property name="styleSheet">
@@ -220,7 +220,7 @@ QPushButton:hover {
          <widget class="QLabel" name="progressLabel">
           <property name="font">
            <font>
-            <family>Neue Haas Grotesk Text Pro</family>
+            <family>MS Shell Dlg 2</family>
             <pointsize>12</pointsize>
            </font>
           </property>
@@ -323,7 +323,7 @@ QPushButton:hover {
               <widget class="QLabel" name="noStudiedLabel">
                <property name="font">
                 <font>
-                 <family>Neue Haas Grotesk Text Pro</family>
+                 <family>MS Shell Dlg 2</family>
                  <pointsize>16</pointsize>
                 </font>
                </property>
@@ -339,7 +339,7 @@ QPushButton:hover {
               <widget class="QLabel" name="noRemainingLabel">
                <property name="font">
                 <font>
-                 <family>Neue Haas Grotesk Text Pro</family>
+                 <family>MS Shell Dlg 2</family>
                  <pointsize>16</pointsize>
                 </font>
                </property>
@@ -389,7 +389,7 @@ QPushButton:hover {
                </property>
                <property name="font">
                 <font>
-                 <family>Neue Haas Grotesk Text Pro</family>
+                 <family>MS Shell Dlg 2</family>
                  <pointsize>16</pointsize>
                 </font>
                </property>
@@ -411,7 +411,7 @@ QPushButton:hover {
                </property>
                <property name="font">
                 <font>
-                 <family>Neue Haas Grotesk Text Pro</family>
+                 <family>MS Shell Dlg 2</family>
                  <pointsize>16</pointsize>
                 </font>
                </property>
