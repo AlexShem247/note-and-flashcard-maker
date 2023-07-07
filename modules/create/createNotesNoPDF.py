@@ -2,9 +2,9 @@ import PyQt5.QtWidgets as qt
 from PyQt5.QtGui import QIcon
 from PyQt5 import uic
 
-import addTextbook
-import createNotes
-from createMethods import CreateWindow
+import modules.create.addTextbook as addTextbook
+import modules.create.createNotes as createNotes
+from modules.create.createMethods import CreateWindow
 
 
 class Window(CreateWindow):

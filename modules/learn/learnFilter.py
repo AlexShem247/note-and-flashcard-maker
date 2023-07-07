@@ -4,7 +4,7 @@ from PyQt5 import uic
 import sqlite3
 from itertools import chain
 
-import learnNotes
+import modules.learn.learnNotes as learnNotes
 
 
 class Window(qt.QWidget):

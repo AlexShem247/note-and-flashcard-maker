@@ -4,7 +4,6 @@ from PyQt5.QtCore import Qt, QSize, QThread, pyqtSignal
 from PyQt5.QtMultimedia import QSound
 from PyQt5 import uic
 import os
-import sys
 import sqlite3
 import json
 import random
@@ -22,15 +21,12 @@ import re
 import subprocess
 from math import *
 
-sys.path.append("modules")
-sys.path.append("modules/create")
-
-import createNotesNoPDF
-import createNotes
-import paint
-from modImage import getCentralCoordinates
-import showScore
-import showSummary
+import modules.create.createNotesNoPDF as createNotesNoPDF
+import modules.create.createNotes as createNotes
+import modules.create.paint as paint
+from modules.modImage import getCentralCoordinates
+import modules.learn.showScore as showScore
+import modules.learn.showSummary as showSummary
 
 # Define constants
 PUNCTUATION = ["!", "#", "$", "%", "&", "(", ")", "+", ",", "^", ".", "/", ":", ";", "=", "?", "@", "[", "\\", "]",

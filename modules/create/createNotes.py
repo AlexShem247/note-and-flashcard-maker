@@ -7,9 +7,9 @@ import os
 import fitz
 from PIL import Image
 
-import addTextbook
-import createNotesNoPDF
-from createMethods import CreateWindow
+import modules.create.addTextbook as addTextbook
+import modules.create.createNotesNoPDF as createNotesNoPDF
+from modules.create.createMethods import CreateWindow
 
 
 class Window(CreateWindow):

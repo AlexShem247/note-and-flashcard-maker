@@ -3,7 +3,6 @@ from PyQt5.QtGui import QFont, QTextCharFormat, QPalette, QColor, QIcon, QPixmap
 from PyQt5.QtCore import Qt, QSize
 from PyQt5 import uic
 from random import randrange
-import sys
 import json
 import sqlite3
 from datetime import datetime, date
@@ -11,17 +10,13 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from math import pi
 
-sys.path.append("modules/create")
-sys.path.append("modules/view")
-sys.path.append("modules/learn")
-sys.path.append("modules/export")
 
-import createNotesNoPDF
-import createNotes
-import viewNotes
-import learnFilter
-import exportNotes
-import courseOptions
+import modules.create.createNotesNoPDF as createNotesNoPDF
+import modules.create.createNotes as createNotes
+import modules.view.viewNotes as viewNotes
+import modules.learn.learnFilter as learnFilter
+import modules.export.exportNotes as exportNotes
+import modules.courseOptions as courseOptions
 
 
 def getTodaysQuote():

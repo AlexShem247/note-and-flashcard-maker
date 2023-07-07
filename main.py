@@ -8,12 +8,9 @@ import json
 from getpass import getuser
 import ctypes
 
-sys.path.append("modules")
-
-# Other Windows
-import createCourse
-import homeScreen
-import mainSettings
+import modules.createCourse as createCourse
+import modules.homeScreen as homeScreen
+import modules.mainSettings as mainSettings
 
 PAINT_PATH = "C:/WINDOWS/system32/mspaint.exe"
 

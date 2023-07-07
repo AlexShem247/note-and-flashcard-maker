@@ -13,12 +13,12 @@ from keyword import kwlist
 import subprocess
 from table2ascii import table2ascii, PresetStyle
 
-import editTopics
-import editSubtopics
-import paint
-import textbookSnipper
-import editFormula
-import editTable
+import modules.create.editTopics as editTopics
+import modules.create.editSubtopics as editSubtopics
+import modules.create.paint as paint
+import modules.create.textbookSnipper as textbookSnipper
+import modules.create.editFormula as editFormula
+import modules.create.editTable as editTable
 
 
 def validEquation(text):

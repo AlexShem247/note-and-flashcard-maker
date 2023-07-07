@@ -1,0 +1,22 @@
+# Ignore PyCharm Files
+.idea
+
+# Ignore my notes
+data/*
+
+# Ignore my modified settings .json files
+text/currentSettings.json
+text/defaultSettings.json
+
+# Ignore Compiled Python code
+*.pyc
+
+# Ignore files used for developement notes
+Capture.png
+Colour Scheme.pdf
+fix.txt
+Line Counter.lnk
+Notes.docx
+Smart Retain.psd
+stylesheet.txt
+Tables.xlsx

@@ -3,19 +3,15 @@ from PyQt5.QtGui import QFont, QIcon, QPixmap
 from PyQt5.QtCore import Qt, QSize
 from PyQt5 import uic
 import os
-import sys
 import sqlite3
 import string
 import re
 from PIL import Image
 import matplotlib.pyplot as plt
 
-sys.path.append("modules")
-sys.path.append("modules/create")
-
-import createNotesNoPDF
-import createNotes
-from modImage import getCentralCoordinates
+import modules.create.createNotesNoPDF as createNotesNoPDF
+import modules.create.createNotes as createNotes
+from modules.modImage import getCentralCoordinates
 
 
 POWER_SYMBOL = {"0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹",

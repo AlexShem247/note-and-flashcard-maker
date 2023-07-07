@@ -13,7 +13,7 @@ import zipfile
 import re
 import string
 from PIL import Image
-from modImage import getCentralCoordinates
+from modules.modImage import getCentralCoordinates
 
 window = None
 POWER_SYMBOL = {"0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹",
