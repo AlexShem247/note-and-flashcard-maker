@@ -70,7 +70,6 @@ class Window(CreateWindow):
         # Show PDF
         self.showPDF()
 
-
     def closeEvent(self, event):
         """ Run when window gets closed """
         if self.back:

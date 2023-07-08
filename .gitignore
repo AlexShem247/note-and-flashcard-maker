@@ -10,6 +10,7 @@ text/defaultSettings.json
 
 # Ignore Compiled Python code
 *.pyc
+compiledMain.pyw
 
 # Ignore files used for developement notes
 Capture.png
@@ -20,3 +21,4 @@ Notes.docx
 Smart Retain.psd
 stylesheet.txt
 Tables.xlsx
+compile.py
