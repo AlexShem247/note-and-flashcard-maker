@@ -362,7 +362,7 @@ class CreateWindow(qt.QMainWindow):
                 else:
                     imagePath = "images/temp/foo.png"
 
-            if os.path.exists(data["editorPath"][0]) and data["editorPath"][1]:
+            if (os.path.exists(data["editorPath"][0]) or data["editorPath"][0] == "mspaint") and data["editorPath"][1]:
                 # Open external application
                 cwd = os.getcwd()
                 os.chdir(os.path.join(os.getcwd(), "images/temp/").replace("\\", "/"))
@@ -534,7 +534,7 @@ class CreateWindow(qt.QMainWindow):
         if fName:
             # Create image
             img = Image.open(fName)
-            if os.path.exists(data["editorPath"][0]) and data["editorPath"][1]:
+            if (os.path.exists(data["editorPath"][0]) or data["editorPath"][0] == "mspaint") and data["editorPath"][1]:
                 if upload:
                     img.save(imagePath)
                 else:

@@ -106,8 +106,8 @@ class Window(CreateWindow):
         else:
             fontColor = "#FFFFFF"
 
-        courseNameLabel.setText(self.courseName + " - View Notes")
-        courseNameLabel.setStyleSheet(f"color:{fontColor};border-width:0px")
+        self.courseNameLabel.setText(self.courseName + " - View Notes")
+        self.courseNameLabel.setStyleSheet(f"color:{fontColor};border-width:0px")
 
     def addPDF(self):
         """ Navigate user to add PDF window """

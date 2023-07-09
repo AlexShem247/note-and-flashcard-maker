@@ -8,6 +8,9 @@ data/*
 text/currentSettings.json
 text/defaultSettings.json
 
+# Ignore temp files
+images/temp/*
+
 # Ignore Compiled Python code
 *.pyc
 compiledMain.pyw

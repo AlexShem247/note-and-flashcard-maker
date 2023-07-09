@@ -1,3 +1,5 @@
+import platform
+
 import PyQt5.QtWidgets as qt
 from PyQt5.QtGui import QFont, QIcon, QPixmap
 from PyQt5.QtCore import Qt, QSize
@@ -13,8 +15,6 @@ import modules.createCourse as createCourse
 import modules.homeScreen as homeScreen
 import modules.mainSettings as mainSettings
 
-PAINT_PATH = "C:/WINDOWS/system32/mspaint.exe"
-
 data = {
     "nickname": getuser().title(),
     "textbookPath": f"C:/Users/{getuser()}/Documents/",
@@ -26,8 +26,8 @@ data = {
 }
 
 # Determine whether user's computer has MS Paint
-if os.path.exists(PAINT_PATH):
-    data["editorPath"] = [PAINT_PATH, False]
+if platform.system() == "Windows":
+    data["editorPath"] = ["mspaint", False]
 
 # Create JSON files
 if not os.path.isfile("text/defaultSettings.json"):
@@ -38,6 +38,10 @@ if not os.path.isfile("text/currentSettings.json"):
     with open("text/currentSettings.json", "w") as f:
         json.dump(data, f, indent=4)
 
+# Create temp folder
+if not os.path.exists("images/temp"):
+    os.makedirs("images/temp")
+
 # Get courses that have had their name changed
 if os.path.isfile("images/temp/courseNameChange.json"):
     with open("images/temp/courseNameChange.json") as f:
@@ -45,12 +49,11 @@ if os.path.isfile("images/temp/courseNameChange.json"):
         os.rename(newCourse[0], newCourse[1])
     os.remove("images/temp/courseNameChange.json")
 
-
 def show_exception_and_exit(exc_type, exc_value, tb):
     ctypes.windll.user32.MessageBoxW(0, f"{exc_type.__name__}: {exc_value}", "An Unexpected Error has occurred", 0x10)
 
 
-# sys.excepthook = show_exception_and_exit # TODO Add this before pushing
+#sys.excepthook = show_exception_and_exit # TODO Add this before pushing
 sys.excepthook = lambda exc_type, exc_value, tb: (traceback.print_exception(exc_type, exc_value, tb), sys.exit(-1))
 
 

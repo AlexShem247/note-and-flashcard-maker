@@ -1,3 +1,5 @@
+import os
+
 import PyQt5.QtWidgets as qt
 from PyQt5.QtGui import QFont, QTextCharFormat, QPalette, QColor, QIcon, QPixmap, QPainter
 from PyQt5.QtCore import Qt, QSize
@@ -155,7 +157,7 @@ class Window(qt.QMainWindow):
 
                 # Get average score
                 for score in scores:
-                    average = sum(scores[score]) / len(scores[score])
+                    average = sum([min(s, 5) for s in scores[score]]) / len(scores[score])
                     scores[score] = average
 
                 topicRanked = list({k: v for k, v in sorted(scores.items(), key=lambda item: item[1])}.keys())
@@ -193,9 +195,7 @@ class Window(qt.QMainWindow):
         topics = {"group": ["A"]}
 
         for topic in scores:
-            score = scores[topic]
-            if score > 5:
-                score = 5
+            score = min(scores[topic], 5)
 
             # Adjust topic name to fit
             MAX_LENGTH = 12
@@ -446,7 +446,14 @@ class Window(qt.QMainWindow):
     def navigateToCreate(self):
         """ Sends user to Create Notes window """
         if self.textbookPath[2]:
-            self.w = createNotes.Window(self, self.courseName, self.color, self.textbookPath)
+            if os.path.isfile(self.textbookPath[0]):
+                self.w = createNotes.Window(self, self.courseName, self.color, self.textbookPath)
+            else:
+                # Cannot find textbook
+                qt.QMessageBox.warning(self, "Cannot Find Textbook", f"The file:\n{self.textbookPath[0]}\nis missing "
+                                                                     f"or has been moved.",
+                                        qt.QMessageBox.Ok)
+                self.w = createNotesNoPDF.Window(self, self.courseName, self.color, self.textbookPath)
         else:
             self.w = createNotesNoPDF.Window(self, self.courseName, self.color, self.textbookPath)
         self.w.show()
