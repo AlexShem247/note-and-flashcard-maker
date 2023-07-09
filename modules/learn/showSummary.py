@@ -37,37 +37,37 @@ class Window(qt.QMainWindow):
         self.show()
 
         # Get widgets
-        messageLabel = self.findChild(qt.QLabel, "messageLabel")
-        noFactsLabel = self.findChild(qt.QLabel, "noFactsLabel")
-        noDefLabel = self.findChild(qt.QLabel, "noDefLabel")
-        noProLabel = self.findChild(qt.QLabel, "noProLabel")
-        noFormLabel = self.findChild(qt.QLabel, "noFormLabel")
-        noDiaLabel = self.findChild(qt.QLabel, "noDiaLabel")
-        noTabLabel = self.findChild(qt.QLabel, "noTabLabel")
-        totalLabel = self.findChild(qt.QLabel, "totalLabel")
-        remainingLabel = self.findChild(qt.QLabel, "remainingLabel")
-        coverageLabel = self.findChild(qt.QLabel, "coverageLabel")
-        avTimeLabel = self.findChild(qt.QLabel, "avTimeLabel")
-        finishBtn = self.findChild(qt.QPushButton, "finishBtn")
+        self.messageLabel = self.findChild(qt.QLabel, "messageLabel")
+        self.noFactsLabel = self.findChild(qt.QLabel, "noFactsLabel")
+        self.noDefLabel = self.findChild(qt.QLabel, "noDefLabel")
+        self.noProLabel = self.findChild(qt.QLabel, "noProLabel")
+        self.noFormLabel = self.findChild(qt.QLabel, "noFormLabel")
+        self.noDiaLabel = self.findChild(qt.QLabel, "noDiaLabel")
+        self.noTabLabel = self.findChild(qt.QLabel, "noTabLabel")
+        self.totalLabel = self.findChild(qt.QLabel, "totalLabel")
+        self.remainingLabel = self.findChild(qt.QLabel, "remainingLabel")
+        self.coverageLabel = self.findChild(qt.QLabel, "coverageLabel")
+        self.avTimeLabel = self.findChild(qt.QLabel, "avTimeLabel")
+        self.finishBtn = self.findChild(qt.QPushButton, "finishBtn")
 
         # Fill labels
         with open("text/currentSettings.json") as f:
             data = json.load(f)
 
-        messageLabel.setText(f"Well done {data['nickname']}!")
-        noFactsLabel.setText(f"Facts Studied: {factsStudied}")
-        noDefLabel.setText(f"Definitions Studied: {defStudied}")
+        self.messageLabel.setText(f"Well done {data['nickname']}!")
+        self.noFactsLabel.setText(f"Facts Studied: {factsStudied}")
+        self.noDefLabel.setText(f"Definitions Studied: {defStudied}")
 
-        noProLabel.setText(f"Processes Studied: {proStudied}")
-        noFormLabel.setText(f"Formulas Studied: {formStudied}")
-        noDiaLabel.setText(f"Diagrams Studied: {diaStudied}")
-        noTabLabel.setText(f"Tables Studied: {tabStudied}")
+        self.noProLabel.setText(f"Processes Studied: {proStudied}")
+        self.noFormLabel.setText(f"Formulas Studied: {formStudied}")
+        self.noDiaLabel.setText(f"Diagrams Studied: {diaStudied}")
+        self.noTabLabel.setText(f"Tables Studied: {tabStudied}")
 
-        totalLabel = self.findChild(qt.QLabel, "totalLabel")
-        totalLabel.setText(f"Total Notes Studied: {self.totalStudied}")
-        remainingLabel.setText(f"Notes Remaining: {noRemaining}")
-        graphicLayout = self.findChild(qt.QVBoxLayout, "graphicLayout")
-        avTimeLabel.setText(f"Average Time Spent per Note: {self.averageTime}s")
+        self.totalLabel = self.findChild(qt.QLabel, "totalLabel")
+        self.totalLabel.setText(f"Total Notes Studied: {self.totalStudied}")
+        self.remainingLabel.setText(f"Notes Remaining: {noRemaining}")
+        self.graphicLayout = self.findChild(qt.QVBoxLayout, "graphicLayout")
+        self.avTimeLabel.setText(f"Average Time Spent per Note: {self.averageTime}s")
 
         # Return how notes are in total
         conn = sqlite3.connect(self.databasePath)
@@ -75,9 +75,9 @@ class Window(qt.QMainWindow):
         c.execute("SELECT noteID FROM notes")
         totalNoNumber = len(c.fetchall())
         coverage = round(100 * self.totalStudied / totalNoNumber)
-        coverageLabel.setText(f"Total Course Coverage: {coverage}%")
+        self.coverageLabel.setText(f"Total Course Coverage: {coverage}%")
 
-        finishBtn.clicked.connect(self.close)
+        self.finishBtn.clicked.connect(self.close)
 
         self.updateAverageScores()
         self.createPieChart()
@@ -204,10 +204,10 @@ class Window(qt.QMainWindow):
     def updateMenuBar(self):
         """ Updates menu bar with course title """
         # Load widgets
-        courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
-        menuBar = self.findChild(qt.QWidget, "menuBar")
+        self.courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
+        self.menuBar = self.findChild(qt.QWidget, "menuBar")
 
-        menuBar.setStyleSheet(f"background-color:{self.color}")
+        self.menuBar.setStyleSheet(f"background-color:{self.color}")
         fontColor = self.color.lstrip("#")
         lv = len(fontColor)
         r, g, b = tuple(int(fontColor[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
@@ -216,5 +216,5 @@ class Window(qt.QMainWindow):
         else:
             fontColor = "#FFFFFF"
 
-        courseNameLabel.setText(self.courseName + " - Learn Mode FINISHED")
-        courseNameLabel.setStyleSheet(f"color:{fontColor}")
+        self.courseNameLabel.setText(self.courseName + " - Learn Mode FINISHED")
+        self.courseNameLabel.setStyleSheet(f"color:{fontColor}")

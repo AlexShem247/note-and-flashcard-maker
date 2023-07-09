@@ -37,13 +37,13 @@ class Window(CreateWindow):
         self.show()
 
         # Get widgets
-        courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
-        pdfNameLabel = self.findChild(qt.QLabel, "pdfNameLabel")
-        pageBox = self.findChild(qt.QSpinBox, "pageBox")
-        pageLabel = self.findChild(qt.QLabel, "pageLabel")
-        scrollArea = self.findChild(qt.QScrollArea, "scrollArea")
-        prevPageBtn = self.findChild(qt.QToolButton, "prevPageBtn")
-        nextPageBtn = self.findChild(qt.QToolButton, "nextPageBtn")
+        self.courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
+        self.pdfNameLabel = self.findChild(qt.QLabel, "pdfNameLabel")
+        self.pageBox = self.findChild(qt.QSpinBox, "pageBox")
+        self.pageLabel = self.findChild(qt.QLabel, "pageLabel")
+        self.scrollArea = self.findChild(qt.QScrollArea, "scrollArea")
+        self.prevPageBtn = self.findChild(qt.QToolButton, "prevPageBtn")
+        self.nextPageBtn = self.findChild(qt.QToolButton, "nextPageBtn")
 
         self.widget = qt.QWidget()
         self.pdfBox = qt.QVBoxLayout()
@@ -59,13 +59,13 @@ class Window(CreateWindow):
         self.scrollArea.setWidget(self.widget)
 
         # Change label text
-        courseNameLabel.setText(course + " - Create Notes")
-        pdfNameLabel.setText(os.path.basename(self.textbookPath[0]))
+        self.courseNameLabel.setText(course + " - Create Notes")
+        self.pdfNameLabel.setText(os.path.basename(self.textbookPath[0]))
 
         # Bind buttons
-        nextPageBtn.clicked.connect(lambda: self.changePage(1))
-        prevPageBtn.clicked.connect(lambda: self.changePage(-1))
-        pageBox.valueChanged.connect(self.gotToPage)
+        self.nextPageBtn.clicked.connect(lambda: self.changePage(1))
+        self.prevPageBtn.clicked.connect(lambda: self.changePage(-1))
+        self.pageBox.valueChanged.connect(self.gotToPage)
 
         # Show PDF
         self.showPDF()
@@ -86,17 +86,17 @@ class Window(CreateWindow):
     def updateMenuBar(self):
         """ Updates menu bar with course title """
         # Load widgets
-        courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
-        menuBar = self.findChild(qt.QWidget, "menuBar")
-        settingsBtn = self.findChild(qt.QPushButton, "settingsBtn")
+        self.courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
+        self.menuBar = self.findChild(qt.QWidget, "menuBar")
+        self.settingsBtn = self.findChild(qt.QPushButton, "settingsBtn")
 
         # Bind buttons
-        settingsBtn.clicked.connect(self.addPDF)
+        self.settingsBtn.clicked.connect(self.addPDF)
 
         # Add icons
-        settingsBtn.setIcon(QIcon("images/spanner.png"))
+        self.settingsBtn.setIcon(QIcon("images/spanner.png"))
 
-        menuBar.setStyleSheet(f"background-color:{self.color};border-style: outset;border-width: 2px;border-radius: "
+        self.menuBar.setStyleSheet(f"background-color:{self.color};border-style: outset;border-width: 2px;border-radius: "
                               "10px;border-color: #303545;")
         fontColor = self.color.lstrip("#")
         lv = len(fontColor)

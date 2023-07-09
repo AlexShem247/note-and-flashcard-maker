@@ -60,32 +60,32 @@ class Window(qt.QMainWindow):
         self.show()
 
         # Get widgets
-        editBtn = self.findChild(qt.QPushButton, "editBtn")
-        starBtn = self.findChild(qt.QPushButton, "starBtn")
-        noteNoLabel = self.findChild(qt.QLabel, "noteNoLabel")
-        noteNoBox = self.findChild(qt.QSpinBox, "noteNoBox")
-        scoreLabel = self.findChild(qt.QLabel, "scoreLabel")
-        leftBtn = self.findChild(qt.QToolButton, "leftBtn")
-        rightBtn = self.findChild(qt.QToolButton, "rightBtn")
-        noteEdit = self.findChild(qt.QTextEdit, "noteEdit")
-        topicLabel = self.findChild(qt.QLabel, "topicLabel")
-        subtopicLabel = self.findChild(qt.QLabel, "subtopicLabel")
-        diagramLabel = self.findChild(qt.QLabel, "diagramLabel")
-        flipBtn = self.findChild(qt.QPushButton, "flipBtn")
+        self.editBtn = self.findChild(qt.QPushButton, "editBtn")
+        self.starBtn = self.findChild(qt.QPushButton, "starBtn")
+        self.noteNoLabel = self.findChild(qt.QLabel, "noteNoLabel")
+        self.noteNoBox = self.findChild(qt.QSpinBox, "noteNoBox")
+        self.scoreLabel = self.findChild(qt.QLabel, "scoreLabel")
+        self.leftBtn = self.findChild(qt.QToolButton, "leftBtn")
+        self.rightBtn = self.findChild(qt.QToolButton, "rightBtn")
+        self.noteEdit = self.findChild(qt.QTextEdit, "noteEdit")
+        self.topicLabel = self.findChild(qt.QLabel, "topicLabel")
+        self.subtopicLabel = self.findChild(qt.QLabel, "subtopicLabel")
+        self.diagramLabel = self.findChild(qt.QLabel, "diagramLabel")
+        self.flipBtn = self.findChild(qt.QPushButton, "flipBtn")
 
         # Set button icons
-        editBtn.setIcon(QIcon("images/edit.png"))
-        editBtn.setIconSize(QSize(50, 50))
-        starBtn.setIcon(QIcon("images/star.png"))
-        starBtn.setIconSize(QSize(40, 40))
+        self.editBtn.setIcon(QIcon("images/edit.png"))
+        self.editBtn.setIconSize(QSize(50, 50))
+        self.starBtn.setIcon(QIcon("images/star.png"))
+        self.starBtn.setIconSize(QSize(40, 40))
 
         # Bind buttons
-        leftBtn.clicked.connect(lambda: self.nextNote(-1))
-        rightBtn.clicked.connect(lambda: self.nextNote(1))
-        flipBtn.clicked.connect(self.flipNote)
-        starBtn.clicked.connect(self.starNote)
-        editBtn.clicked.connect(self.sendToEdit)
-        noteNoBox.valueChanged.connect(self.spinboxUpdate)
+        self.leftBtn.clicked.connect(lambda: self.nextNote(-1))
+        self.rightBtn.clicked.connect(lambda: self.nextNote(1))
+        self.flipBtn.clicked.connect(self.flipNote)
+        self.starBtn.clicked.connect(self.starNote)
+        self.editBtn.clicked.connect(self.sendToEdit)
+        self.noteNoBox.valueChanged.connect(self.spinboxUpdate)
 
         # Bind arrows
         self.goLeftAction = qt.QAction("Go left", self)
@@ -427,15 +427,15 @@ class Window(qt.QMainWindow):
     def updateMenuBar(self):
         """ Updates menu bar with course title """
         # Load widgets
-        courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
-        menuBar = self.findChild(qt.QWidget, "menuBar")
-        optionsBtn = self.findChild(qt.QPushButton, "optionsBtn")
+        self.courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
+        self.menuBar = self.findChild(qt.QWidget, "menuBar")
+        self.optionsBtn = self.findChild(qt.QPushButton, "optionsBtn")
 
         # Add icons
-        optionsBtn.setIcon(QIcon("images/options.png"))
-        optionsBtn.clicked.connect(self.showOptions)
+        self.optionsBtn.setIcon(QIcon("images/options.png"))
+        self.optionsBtn.clicked.connect(self.showOptions)
 
-        menuBar.setStyleSheet(f"background-color:{self.color};border-style: outset;border-width: 2px;border-radius: "
+        self.menuBar.setStyleSheet(f"background-color:{self.color};border-style: outset;border-width: 2px;border-radius: "
                               "10px;border-color: #303545;")
         fontColor = self.color.lstrip("#")
         lv = len(fontColor)
@@ -445,8 +445,8 @@ class Window(qt.QMainWindow):
         else:
             fontColor = "#FFFFFF"
 
-        courseNameLabel.setText(self.courseName + " - View Notes")
-        courseNameLabel.setStyleSheet(f"color:{fontColor};border-width:0px")
+        self.courseNameLabel.setText(self.courseName + " - View Notes")
+        self.courseNameLabel.setStyleSheet(f"color:{fontColor};border-width:0px")
 
     def showOptions(self):
         """ Opens filter menu """
@@ -503,14 +503,14 @@ class Widget(qt.QWidget):
         self.filterOptions = filterOptions
 
         # Get widgets
-        topicCombo = self.findChild(qt.QComboBox, "topicCombo")
-        starBox = self.findChild(qt.QCheckBox, "starBox")
-        okBtn = self.findChild(qt.QPushButton, "okBtn")
-        cancelBtn = self.findChild(qt.QPushButton, "cancelBtn")
+        self.topicCombo = self.findChild(qt.QComboBox, "topicCombo")
+        self.starBox = self.findChild(qt.QCheckBox, "starBox")
+        self.okBtn = self.findChild(qt.QPushButton, "okBtn")
+        self.cancelBtn = self.findChild(qt.QPushButton, "cancelBtn")
 
         # Bind buttons
-        okBtn.clicked.connect(self.applyFilter)
-        cancelBtn.clicked.connect(self.close)
+        self.okBtn.clicked.connect(self.applyFilter)
+        self.cancelBtn.clicked.connect(self.close)
 
         self.fillWidgets()
 

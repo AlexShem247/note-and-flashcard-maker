@@ -253,17 +253,17 @@ class Window(qt.QMainWindow):
         self.ReturnAction.triggered.connect(self.showNextNote)
 
         # Get widgets
-        noteBox = self.findChild(qt.QVBoxLayout, "noteBox")
-        topicLabel = self.findChild(qt.QLabel, "topicLabel")
-        subtopicLabel = self.findChild(qt.QLabel, "subtopicLabel")
-        questionEdit = self.findChild(qt.QTextEdit, "questionEdit")
-        diagramLabel = self.findChild(qt.QLabel, "diagramLabel")
-        answerEdit = self.findChild(qt.QTextEdit, "answerEdit")
-        buttonLayout = self.findChild(qt.QHBoxLayout, "buttonLayout")
-        finishBtn = self.findChild(qt.QPushButton, "finishBtn")
-        audioBtn = self.findChild(qt.QPushButton, "audioBtn")
-        audioBtn.setIcon(QIcon("images/no_audio.png"))
-        audioBtn.setIconSize(QSize(35, 35))
+        self.noteBox = self.findChild(qt.QVBoxLayout, "noteBox")
+        self.topicLabel = self.findChild(qt.QLabel, "topicLabel")
+        self.subtopicLabel = self.findChild(qt.QLabel, "subtopicLabel")
+        self.questionEdit = self.findChild(qt.QTextEdit, "questionEdit")
+        self.diagramLabel = self.findChild(qt.QLabel, "diagramLabel")
+        self.answerEdit = self.findChild(qt.QTextEdit, "answerEdit")
+        self.buttonLayout = self.findChild(qt.QHBoxLayout, "buttonLayout")
+        self.finishBtn = self.findChild(qt.QPushButton, "finishBtn")
+        self.audioBtn = self.findChild(qt.QPushButton, "audioBtn")
+        self.audioBtn.setIcon(QIcon("images/no_audio.png"))
+        self.audioBtn.setIconSize(QSize(35, 35))
 
         # Create widgets
         self.stepListWidget = qt.QListWidget()  # Create List Widget
@@ -284,10 +284,10 @@ class Window(qt.QMainWindow):
         self.boldFont.setBold(True)
 
         # Bind Buttons
-        finishBtn.clicked.connect(self.finishStudying)
-        finishBtn.setFocusPolicy(Qt.NoFocus)
-        audioBtn.clicked.connect(self.toggleAudio)
-        audioBtn.setFocusPolicy(Qt.NoFocus)
+        self.finishBtn.clicked.connect(self.finishStudying)
+        self.finishBtn.setFocusPolicy(Qt.NoFocus)
+        self.audioBtn.clicked.connect(self.toggleAudio)
+        self.audioBtn.setFocusPolicy(Qt.NoFocus)
         self.stepListWidget.itemChanged.connect(self.stepListModified)
         self.stepListWidget.currentItemChanged.connect(self.showProcessStep)
 
@@ -1823,10 +1823,10 @@ class Window(qt.QMainWindow):
     def updateMenuBar(self):
         """ Updates menu bar with course title """
         # Load widgets
-        courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
-        menuBar = self.findChild(qt.QWidget, "menuBar")
+        self.courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
+        self.menuBar = self.findChild(qt.QWidget, "menuBar")
 
-        menuBar.setStyleSheet(f"background-color:{self.color}")
+        self.menuBar.setStyleSheet(f"background-color:{self.color}")
         fontColor = self.color.lstrip("#")
         lv = len(fontColor)
         r, g, b = tuple(int(fontColor[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
@@ -1835,5 +1835,5 @@ class Window(qt.QMainWindow):
         else:
             fontColor = "#FFFFFF"
 
-        courseNameLabel.setText(self.courseName + " - Learn Notes")
-        courseNameLabel.setStyleSheet(f"color:{fontColor}")
+        self.courseNameLabel.setText(self.courseName + " - Learn Notes")
+        self.courseNameLabel.setStyleSheet(f"color:{fontColor}")

@@ -28,22 +28,22 @@ class Window(qt.QMainWindow):
         self.boldFont.setBold(True)
 
         # Get widgets
-        table = self.findChild(qt.QTableWidget, "table")
-        twoWayCheck = self.findChild(qt.QCheckBox, "twoWayCheck")
-        noRowBox = self.findChild(qt.QSpinBox, "noRowBox")
-        noColBox = self.findChild(qt.QSpinBox, "noColBox")
-        saveBtn = self.findChild(qt.QPushButton, "saveBtn")
+        self.table = self.findChild(qt.QTableWidget, "table")
+        self.twoWayCheck = self.findChild(qt.QCheckBox, "twoWayCheck")
+        self.noRowBox = self.findChild(qt.QSpinBox, "noRowBox")
+        self.noColBox = self.findChild(qt.QSpinBox, "noColBox")
+        self.saveBtn = self.findChild(qt.QPushButton, "saveBtn")
 
         # Bind widgets
-        twoWayCheck.stateChanged.connect(self.changeTableType)
-        saveBtn.clicked.connect(self.saveAndQuit)
-        noRowBox.valueChanged.connect(self.changeNoRows)
-        noColBox.valueChanged.connect(self.changeNoCols)
-        table.itemChanged.connect(self.tableChanged)
+        self.twoWayCheck.stateChanged.connect(self.changeTableType)
+        self.saveBtn.clicked.connect(self.saveAndQuit)
+        self.noRowBox.valueChanged.connect(self.changeNoRows)
+        self.noColBox.valueChanged.connect(self.changeNoCols)
+        self.table.itemChanged.connect(self.tableChanged)
 
         # Fill table with values
         self.fillTable()
-        header = table.horizontalHeader()
+        header = self.table.horizontalHeader()
         header.setSectionResizeMode(qt.QHeaderView.ResizeToContents)
 
     def changeTableType(self):

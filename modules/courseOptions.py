@@ -21,24 +21,24 @@ class Window(qt.QMainWindow):
         self.show()
 
         # Get widgets
-        nameEdit = self.findChild(qt.QLineEdit, "nameEdit")
-        colorLabel = self.findChild(qt.QLabel, "colorLabel")
-        selectBtn = self.findChild(qt.QPushButton, "selectBtn")
-        saveBtn = self.findChild(qt.QPushButton, "saveBtn")
-        resetBtn = self.findChild(qt.QPushButton, "resetBtn")
-        deleteBtn = self.findChild(qt.QPushButton, "deleteBtn")
+        self.nameEdit = self.findChild(qt.QLineEdit, "nameEdit")
+        self.colorLabel = self.findChild(qt.QLabel, "colorLabel")
+        self.selectBtn = self.findChild(qt.QPushButton, "selectBtn")
+        self.saveBtn = self.findChild(qt.QPushButton, "saveBtn")
+        self.resetBtn = self.findChild(qt.QPushButton, "resetBtn")
+        self.deleteBtn = self.findChild(qt.QPushButton, "deleteBtn")
 
         # Insert current data
-        nameEdit.setText(self.courseName)
-        colorLabel.setStyleSheet(f"background-color:{self.color}; border:2px solid #000000;border-style: "
+        self.nameEdit.setText(self.courseName)
+        self.colorLabel.setStyleSheet(f"background-color:{self.color}; border:2px solid #000000;border-style: "
                                  "outset;border-width: 2px;border-radius: 10px;border-color: #303545;")
 
         # Bind buttons
-        selectBtn.clicked.connect(self.selectColor)
-        saveBtn.clicked.connect(self.saveOptions)
-        nameEdit.textChanged.connect(self.validateCourse)
-        resetBtn.clicked.connect(self.resetProgress)
-        deleteBtn.clicked.connect(self.deleteNotes)
+        self.selectBtn.clicked.connect(self.selectColor)
+        self.saveBtn.clicked.connect(self.saveOptions)
+        self.nameEdit.textChanged.connect(self.validateCourse)
+        self.resetBtn.clicked.connect(self.resetProgress)
+        self.deleteBtn.clicked.connect(self.deleteNotes)
 
     def deleteNotes(self):
         """ Deletes all notes """

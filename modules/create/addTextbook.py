@@ -23,26 +23,26 @@ class Window(qt.QMainWindow):
         self.change = textbookPath[2]
 
         # Get widgets
-        selectBtn = self.findChild(qt.QPushButton, "selectBtn")
-        pathLabel = self.findChild(qt.QLabel, "pathLabel")
-        pageBox = self.findChild(qt.QSpinBox, "pageBox")
-        removeBtn = self.findChild(qt.QPushButton, "removeBtn")
-        confirmBtn = self.findChild(qt.QPushButton, "confirmBtn")
-        displayCheck = self.findChild(qt.QCheckBox, "displayCheck")
+        self.selectBtn = self.findChild(qt.QPushButton, "selectBtn")
+        self.pathLabel = self.findChild(qt.QLabel, "pathLabel")
+        self.pageBox = self.findChild(qt.QSpinBox, "pageBox")
+        self.removeBtn = self.findChild(qt.QPushButton, "removeBtn")
+        self.confirmBtn = self.findChild(qt.QPushButton, "confirmBtn")
+        self.displayCheck = self.findChild(qt.QCheckBox, "displayCheck")
 
         # Change label text
         if self.textbookPath[0]:
-            pathLabel.setText(os.path.basename(self.textbookPath[0]))
+            self.pathLabel.setText(os.path.basename(self.textbookPath[0]))
             self.enableWidgets()
 
         # Check checkbox
-        displayCheck.setChecked(self.textbookPath[2])
-        pageBox.setValue(self.textbookPath[1] + 1)
+        self.displayCheck.setChecked(self.textbookPath[2])
+        self.pageBox.setValue(self.textbookPath[1] + 1)
 
         # Bind buttons
-        selectBtn.clicked.connect(self.selectPDF)
-        removeBtn.clicked.connect(self.removePDF)
-        confirmBtn.clicked.connect(self.confirm)
+        self.selectBtn.clicked.connect(self.selectPDF)
+        self.removeBtn.clicked.connect(self.removePDF)
+        self.confirmBtn.clicked.connect(self.confirm)
 
     def closeEvent(self, event):
         """ Run when window gets closed """

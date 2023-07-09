@@ -88,30 +88,30 @@ class CreateWindow(qt.QMainWindow):
         self.type = None
 
         # Get widgets
-        topicCombo = self.findChild(qt.QComboBox, "topicCombo")
-        subtopicCombo = self.findChild(qt.QComboBox, "subtopicCombo")
-        factBtn = self.findChild(qt.QPushButton, "factBtn")
-        definitionBtn = self.findChild(qt.QPushButton, "definitionBtn")
-        formulaBtn = self.findChild(qt.QPushButton, "formulaBtn")
-        processBtn = self.findChild(qt.QPushButton, "processBtn")
-        diagramBtn = self.findChild(qt.QPushButton, "diagramBtn")
-        tableBtn = self.findChild(qt.QPushButton, "tableBtn")
-        answerEdit = self.findChild(qt.QPlainTextEdit, "answerEdit")
-        questionEdit = self.findChild(qt.QLineEdit, "questionEdit")
-        createNoteBtn = self.findChild(qt.QPushButton, "createNoteBtn")
-        questDiagramBtn = self.findChild(qt.QPushButton, "questDiagramBtn")
-        prevNoteBtn = self.findChild(qt.QToolButton, "prevNoteBtn")
-        nextNoteBtn = self.findChild(qt.QToolButton, "nextNoteBtn")
-        noteNoBox = self.findChild(qt.QSpinBox, "noteNoBox")
-        noteNoLabel = self.findChild(qt.QLabel, "noteNoLabel")
-        questLabel = self.findChild(qt.QLabel, "questLabel")
-        answerLabel = self.findChild(qt.QLabel, "answerLabel")
-        infoLabel = self.findChild(qt.QLabel, "infoLabel")
-        buttonLayout = self.findChild(qt.QHBoxLayout, "buttonLayout")
-        delBtn = self.findChild(qt.QPushButton, "delBtn")
-        delBtn.setIcon(QIcon("images/trash.png"))
-        starBtn = self.findChild(qt.QPushButton, "starBtn")
-        starBtn.setIcon(QIcon("images/star.png"))
+        self.topicCombo = self.findChild(qt.QComboBox, "topicCombo")
+        self.subtopicCombo = self.findChild(qt.QComboBox, "subtopicCombo")
+        self.factBtn = self.findChild(qt.QPushButton, "factBtn")
+        self.definitionBtn = self.findChild(qt.QPushButton, "definitionBtn")
+        self.formulaBtn = self.findChild(qt.QPushButton, "formulaBtn")
+        self.processBtn = self.findChild(qt.QPushButton, "processBtn")
+        self.diagramBtn = self.findChild(qt.QPushButton, "diagramBtn")
+        self.tableBtn = self.findChild(qt.QPushButton, "tableBtn")
+        self.answerEdit = self.findChild(qt.QPlainTextEdit, "answerEdit")
+        self.questionEdit = self.findChild(qt.QLineEdit, "questionEdit")
+        self.createNoteBtn = self.findChild(qt.QPushButton, "createNoteBtn")
+        self.questDiagramBtn = self.findChild(qt.QPushButton, "questDiagramBtn")
+        self.prevNoteBtn = self.findChild(qt.QToolButton, "prevNoteBtn")
+        self.nextNoteBtn = self.findChild(qt.QToolButton, "nextNoteBtn")
+        self.noteNoBox = self.findChild(qt.QSpinBox, "noteNoBox")
+        self.noteNoLabel = self.findChild(qt.QLabel, "noteNoLabel")
+        self.questLabel = self.findChild(qt.QLabel, "questLabel")
+        self.answerLabel = self.findChild(qt.QLabel, "answerLabel")
+        self.infoLabel = self.findChild(qt.QLabel, "infoLabel")
+        self.buttonLayout = self.findChild(qt.QHBoxLayout, "buttonLayout")
+        self.delBtn = self.findChild(qt.QPushButton, "delBtn")
+        self.delBtn.setIcon(QIcon("images/trash.png"))
+        self.starBtn = self.findChild(qt.QPushButton, "starBtn")
+        self.starBtn.setIcon(QIcon("images/star.png"))
 
         # Create widgets
         self.formatBtn = qt.QPushButton(self)
@@ -135,28 +135,28 @@ class CreateWindow(qt.QMainWindow):
         self.monospaceFont.setPointSize(12)
 
         # Add shortcuts
-        qt.QShortcut(QKeySequence("Ctrl+B"), answerEdit).activated.connect(self.highlightWord)
+        qt.QShortcut(QKeySequence("Ctrl+B"), self.answerEdit).activated.connect(self.highlightWord)
 
         # Bind buttons
-        subtopicCombo.currentTextChanged.connect(lambda: self.validateQuestion("subtopic"))
-        questionEdit.textChanged.connect(lambda: self.validateQuestion("question"))
-        answerEdit.textChanged.connect(lambda: self.validateQuestion("answer"))
-        createNoteBtn.clicked.connect(self.createNote)
-        questDiagramBtn.clicked.connect(lambda: self.addQuestPic("initial"))
+        self.subtopicCombo.currentTextChanged.connect(lambda: self.validateQuestion("subtopic"))
+        self.questionEdit.textChanged.connect(lambda: self.validateQuestion("question"))
+        self.answerEdit.textChanged.connect(lambda: self.validateQuestion("answer"))
+        self.createNoteBtn.clicked.connect(self.createNote)
+        self.questDiagramBtn.clicked.connect(lambda: self.addQuestPic("initial"))
         self.formatBtn.clicked.connect(self.formatProcess)
         self.answerDiaBtn.clicked.connect(lambda: self.addQuestPic("answer"))
-        nextNoteBtn.clicked.connect(lambda: self.nextNote(1))
-        prevNoteBtn.clicked.connect(lambda: self.nextNote(-1))
-        delBtn.clicked.connect(self.deleteNote)
-        starBtn.clicked.connect(self.starNote)
-        noteNoBox.valueChanged.connect(self.spinboxUpdate)
-        self.buttons = [factBtn, definitionBtn, formulaBtn, processBtn, diagramBtn, tableBtn]
+        self.nextNoteBtn.clicked.connect(lambda: self.nextNote(1))
+        self.prevNoteBtn.clicked.connect(lambda: self.nextNote(-1))
+        self.delBtn.clicked.connect(self.deleteNote)
+        self.starBtn.clicked.connect(self.starNote)
+        self.noteNoBox.valueChanged.connect(self.spinboxUpdate)
+        self.buttons = [self.factBtn, self.definitionBtn, self.formulaBtn, self.processBtn, self.diagramBtn, self.tableBtn]
 
         for button in self.buttons:
             button.setCheckable(True)
             button.clicked.connect(self.changeNoteType)
 
-        factBtn.setChecked(True)
+        self.factBtn.setChecked(True)
         self.noteType = self.factBtn
 
         # Fill in combo boxes

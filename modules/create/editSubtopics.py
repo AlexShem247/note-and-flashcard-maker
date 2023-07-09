@@ -17,22 +17,22 @@ class Window(qt.QMainWindow):
         self.fillComboBoxes = fillComboBoxes
 
         # Get widgets
-        subtopicNameEdit = self.findChild(qt.QLineEdit, "subtopicNameEdit")
-        addSubtopicBtn = self.findChild(qt.QPushButton, "addSubtopicBtn")
-        subtopicListWidget = self.findChild(qt.QListWidget, "subtopicListWidget")
-        topicCombo = self.findChild(qt.QComboBox, "topicCombo")
-        backBtn = self.findChild(qt.QPushButton, "backBtn")
+        self.subtopicNameEdit = self.findChild(qt.QLineEdit, "subtopicNameEdit")
+        self.addSubtopicBtn = self.findChild(qt.QPushButton, "addSubtopicBtn")
+        self.subtopicListWidget = self.findChild(qt.QListWidget, "subtopicListWidget")
+        self.topicCombo = self.findChild(qt.QComboBox, "topicCombo")
+        self.backBtn = self.findChild(qt.QPushButton, "backBtn")
 
         # Add topics
         self.getTopics()
         self.getSubtopics()
 
         # Bind widgets
-        backBtn.clicked.connect(self.close)
-        subtopicListWidget.clicked.connect(self.modifyTopic)
-        topicCombo.currentTextChanged.connect(self.getSubtopics)
-        subtopicNameEdit.textChanged.connect(self.validateTopic)
-        addSubtopicBtn.clicked.connect(self.addTopic)
+        self.backBtn.clicked.connect(self.close)
+        self.subtopicListWidget.clicked.connect(self.modifyTopic)
+        self.topicCombo.currentTextChanged.connect(self.getSubtopics)
+        self.subtopicNameEdit.textChanged.connect(self.validateTopic)
+        self.addSubtopicBtn.clicked.connect(self.addTopic)
 
     def closeEvent(self, event):
         """ Run when window gets closed """
@@ -172,15 +172,15 @@ class Widget(qt.QWidget):
         self.changeSubtopicTopic = changeSubtopicTopic
 
         # Get widgets
-        subtopicEdit = self.findChild(qt.QLineEdit, "subtopicEdit")
-        topicCombo = self.findChild(qt.QComboBox, "topicCombo")
-        confirmBtn = self.findChild(qt.QPushButton, "confirmBtn")
-        deleteBtn = self.findChild(qt.QPushButton, "deleteBtn")
+        self.subtopicEdit = self.findChild(qt.QLineEdit, "subtopicEdit")
+        self.topicCombo = self.findChild(qt.QComboBox, "topicCombo")
+        self.confirmBtn = self.findChild(qt.QPushButton, "confirmBtn")
+        self.deleteBtn = self.findChild(qt.QPushButton, "deleteBtn")
 
-        subtopicEdit.setText(subtopicName)
-        subtopicEdit.textChanged.connect(self.validateTopicName)
-        confirmBtn.clicked.connect(self.updateTopicName)
-        deleteBtn.clicked.connect(self.deleteTopic)
+        self.subtopicEdit.setText(subtopicName)
+        self.subtopicEdit.textChanged.connect(self.validateTopicName)
+        self.confirmBtn.clicked.connect(self.updateTopicName)
+        self.deleteBtn.clicked.connect(self.deleteTopic)
 
         self.loadTopics()
         self.loadSubtopics()

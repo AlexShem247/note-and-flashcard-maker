@@ -72,37 +72,37 @@ class Window(qt.QMainWindow):
         self.imageList = []
 
         # Get widgets
-        introLabel = self.findChild(qt.QLabel, "introLabel")
-        pastLabel = self.findChild(qt.QLabel, "pastLabel")
-        quoteEdit = self.findChild(qt.QPlainTextEdit, "quoteEdit")
-        calendarWidget = self.findChild(qt.QCalendarWidget, "calendarWidget")
-        strongLabel = self.findChild(qt.QLabel, "strongLabel")
-        weakLabel = self.findChild(qt.QLabel, "weakLabel")
-        scoreLabel = self.findChild(qt.QLabel, "scoreLabel")
-        chartLayout = self.findChild(qt.QHBoxLayout, "chartLayout")
-        createNotesBtn = self.findChild(qt.QPushButton, "createNotesBtn")
-        viewNotesBtn = self.findChild(qt.QPushButton, "viewNotesBtn")
-        learnNotesBtn = self.findChild(qt.QPushButton, "learnNotesBtn")
-        previousBtn = self.findChild(qt.QToolButton, "previousBtn")
-        forwardBtn = self.findChild(qt.QToolButton, "forwardBtn")
-        exportBtn = self.findChild(qt.QPushButton, "exportBtn")
+        self.introLabel = self.findChild(qt.QLabel, "introLabel")
+        self.pastLabel = self.findChild(qt.QLabel, "pastLabel")
+        self.quoteEdit = self.findChild(qt.QPlainTextEdit, "quoteEdit")
+        self.calendarWidget = self.findChild(qt.QCalendarWidget, "calendarWidget")
+        self.strongLabel = self.findChild(qt.QLabel, "strongLabel")
+        self.weakLabel = self.findChild(qt.QLabel, "weakLabel")
+        self.scoreLabel = self.findChild(qt.QLabel, "scoreLabel")
+        self.chartLayout = self.findChild(qt.QHBoxLayout, "chartLayout")
+        self.createNotesBtn = self.findChild(qt.QPushButton, "createNotesBtn")
+        self.viewNotesBtn = self.findChild(qt.QPushButton, "viewNotesBtn")
+        self.learnNotesBtn = self.findChild(qt.QPushButton, "learnNotesBtn")
+        self.previousBtn = self.findChild(qt.QToolButton, "previousBtn")
+        self.forwardBtn = self.findChild(qt.QToolButton, "forwardBtn")
+        self.exportBtn = self.findChild(qt.QPushButton, "exportBtn")
 
         # Change label text
         with open("text/currentSettings.json") as f:
             data = json.load(f)
 
-        introLabel.setText("Welcome back, " + data["nickname"])
-        pastLabel.setText(message)
-        quoteEdit.insertPlainText(quote)
-        quoteEdit.verticalScrollBar().setSliderPosition(0)
+        self.introLabel.setText("Welcome back, " + data["nickname"])
+        self.pastLabel.setText(message)
+        self.quoteEdit.insertPlainText(quote)
+        self.quoteEdit.verticalScrollBar().setSliderPosition(0)
 
         # Bind buttons
-        createNotesBtn.clicked.connect(self.navigateToCreate)
-        viewNotesBtn.clicked.connect(self.navigateToView)
-        learnNotesBtn.clicked.connect(self.navigateToLearn)
-        previousBtn.clicked.connect(lambda: self.changeGraph(-1))
-        forwardBtn.clicked.connect(lambda: self.changeGraph(1))
-        exportBtn.clicked.connect(self.navigateToExport)
+        self.createNotesBtn.clicked.connect(self.navigateToCreate)
+        self.viewNotesBtn.clicked.connect(self.navigateToView)
+        self.learnNotesBtn.clicked.connect(self.navigateToLearn)
+        self.previousBtn.clicked.connect(lambda: self.changeGraph(-1))
+        self.forwardBtn.clicked.connect(lambda: self.changeGraph(1))
+        self.exportBtn.clicked.connect(self.navigateToExport)
 
         # Change menu bar
         self.updateMenuBar()

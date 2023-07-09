@@ -26,24 +26,24 @@ class Window(qt.QMainWindow):
         self.checkTerms = checkTerms
 
         # Get widgets
-        termListWidget = self.findChild(qt.QListWidget, "termListWidget")
-        nameEdit = self.findChild(qt.QLineEdit, "nameEdit")
-        symbolEdit = self.findChild(qt.QLineEdit, "symbolEdit")
-        unitEdit = self.findChild(qt.QLineEdit, "unitEdit")
-        minEdit = self.findChild(qt.QLineEdit, "minEdit")
-        maxEdit = self.findChild(qt.QLineEdit, "maxEdit")
-        stepEdit = self.findChild(qt.QLineEdit, "stepEdit")
-        updateBtn = self.findChild(qt.QPushButton, "updateBtn")
-        backBtn = self.findChild(qt.QPushButton, "backBtn")
+        self.termListWidget = self.findChild(qt.QListWidget, "termListWidget")
+        self.nameEdit = self.findChild(qt.QLineEdit, "nameEdit")
+        self.symbolEdit = self.findChild(qt.QLineEdit, "symbolEdit")
+        self.unitEdit = self.findChild(qt.QLineEdit, "unitEdit")
+        self.minEdit = self.findChild(qt.QLineEdit, "minEdit")
+        self.maxEdit = self.findChild(qt.QLineEdit, "maxEdit")
+        self.stepEdit = self.findChild(qt.QLineEdit, "stepEdit")
+        self.updateBtn = self.findChild(qt.QPushButton, "updateBtn")
+        self.backBtn = self.findChild(qt.QPushButton, "backBtn")
 
         # Bind widgets
-        termListWidget.clicked.connect(self.changeTerm)
-        backBtn.clicked.connect(self.close)
-        updateBtn.clicked.connect(lambda: self.updateTerm(True))
+        self.termListWidget.clicked.connect(self.changeTerm)
+        self.backBtn.clicked.connect(self.close)
+        self.updateBtn.clicked.connect(lambda: self.updateTerm(True))
 
         # Insert terms into List Widget
         for term in terms:
-            termListWidget.addItem(term["symbol"])
+            self.termListWidget.addItem(term["symbol"])
 
         # Fill line edits with values
         self.fillEdits()

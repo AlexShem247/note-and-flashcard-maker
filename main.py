@@ -64,35 +64,35 @@ class Window(qt.QMainWindow):
         self.setWindowIcon(QIcon("images/logo.png"))
 
         # Get widgets
-        createBtn = self.findChild(qt.QPushButton, "createBtn")
-        createBtn.clicked.connect(lambda: self.openWindow(createCourse.Window, loadCourse=self.loadCourses))
+        self.createBtn = self.findChild(qt.QPushButton, "createBtn")
+        self.createBtn.clicked.connect(lambda: self.openWindow(createCourse.Window, loadCourse=self.loadCourses))
 
-        logo = self.findChild(qt.QLabel, "logo")
+        self.logo = self.findChild(qt.QLabel, "logo")
         pixmap = QPixmap("images/full logo transparent.png")
-        logo.setPixmap(pixmap)
-        logo.resize(pixmap.width(), pixmap.height())
+        self.logo.setPixmap(pixmap)
+        self.logo.resize(pixmap.width(), pixmap.height())
 
-        settingsBtn = self.findChild(qt.QPushButton, "settingsBtn")
-        settingsBtn.setIcon(QIcon("images/spanner.png"))
-        settingsBtn.setIconSize(QSize(50, 50))
-        infoBtn = self.findChild(qt.QPushButton, "infoBtn")
-        infoBtn.setIcon(QIcon("images/info.png"))
-        infoBtn.setIconSize(QSize(50, 50))
-        scrollCourses = self.findChild(qt.QScrollArea, "scrollCourses")
+        self.settingsBtn = self.findChild(qt.QPushButton, "settingsBtn")
+        self.settingsBtn.setIcon(QIcon("images/spanner.png"))
+        self.settingsBtn.setIconSize(QSize(50, 50))
+        self.infoBtn = self.findChild(qt.QPushButton, "infoBtn")
+        self.infoBtn.setIcon(QIcon("images/info.png"))
+        self.infoBtn.setIconSize(QSize(50, 50))
+        self.scrollCourses = self.findChild(qt.QScrollArea, "scrollCourses")
 
         self.widget = qt.QWidget()
         self.courseBox = qt.QVBoxLayout()
         self.widget.setLayout(self.courseBox)
 
         # Scroll Area Properties
-        scrollCourses.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
-        scrollCourses.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        scrollCourses.setWidgetResizable(True)
-        scrollCourses.setWidget(self.widget)
+        self.scrollCourses.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.scrollCourses.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.scrollCourses.setWidgetResizable(True)
+        self.scrollCourses.setWidget(self.widget)
 
         # Bind buttons
-        settingsBtn.clicked.connect(self.openSettings)
-        infoBtn.clicked.connect(self.openInfo)
+        self.settingsBtn.clicked.connect(self.openSettings)
+        self.infoBtn.clicked.connect(self.openInfo)
 
         self.loadCourses()
 

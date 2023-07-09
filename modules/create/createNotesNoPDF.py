@@ -27,14 +27,14 @@ class Window(CreateWindow):
         self.initWidgets()
 
         # Get widgets
-        courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
-        addPDFBtn = self.findChild(qt.QPushButton, "addPDFBtn")
+        self.courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
+        self.addPDFBtn = self.findChild(qt.QPushButton, "addPDFBtn")
 
         # Change label text
-        courseNameLabel.setText(course + " - Create Notes")
+        self.courseNameLabel.setText(course + " - Create Notes")
 
         # Bind buttons
-        addPDFBtn.clicked.connect(self.addPDF)
+        self.addPDFBtn.clicked.connect(self.addPDF)
 
 
     def closeEvent(self, event):
@@ -47,20 +47,20 @@ class Window(CreateWindow):
     def updateMenuBar(self):
         """ Updates menu bar with course title """
         # Load widgets
-        courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
-        menuBar = self.findChild(qt.QWidget, "menuBar")
-        btn1 = self.findChild(qt.QPushButton, "btn1")
-        btn2 = self.findChild(qt.QPushButton, "btn2")
-        btn3 = self.findChild(qt.QPushButton, "btn3")
-        settingsBtn = self.findChild(qt.QPushButton, "settingsBtn")
+        self.courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
+        self.menuBar = self.findChild(qt.QWidget, "menuBar")
+        self.btn1 = self.findChild(qt.QPushButton, "btn1")
+        self.btn2 = self.findChild(qt.QPushButton, "btn2")
+        self.btn3 = self.findChild(qt.QPushButton, "btn3")
+        self.settingsBtn = self.findChild(qt.QPushButton, "settingsBtn")
 
         # Bind buttons
-        settingsBtn.clicked.connect(self.addPDF)
+        self.settingsBtn.clicked.connect(self.addPDF)
 
         # Add icons
-        settingsBtn.setIcon(QIcon("images/spanner.png"))
+        self.settingsBtn.setIcon(QIcon("images/spanner.png"))
 
-        menuBar.setStyleSheet(f"background-color:{self.color};border-style: outset;border-width: 2px;border-radius: "
+        self.menuBar.setStyleSheet(f"background-color:{self.color};border-style: outset;border-width: 2px;border-radius: "
                               "10px;border-color: #303545;")
         fontColor = self.color.lstrip("#")
         lv = len(fontColor)
@@ -70,8 +70,8 @@ class Window(CreateWindow):
         else:
             fontColor = "#FFFFFF"
 
-        courseNameLabel.setText(self.courseName + " - View Notes")
-        courseNameLabel.setStyleSheet(f"color:{fontColor};border-width:0px")
+        self.courseNameLabel.setText(self.courseName + " - View Notes")
+        self.courseNameLabel.setStyleSheet(f"color:{fontColor};border-width:0px")
 
     def addPDF(self):
         """ Navigate user to add PDF window """

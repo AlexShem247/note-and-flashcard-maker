@@ -34,45 +34,45 @@ class Window(qt.QMainWindow):
         self.show()
 
         # Get widgets
-        messageLabel = self.findChild(qt.QLabel, "messageLabel")
-        noStudiedLabel = self.findChild(qt.QLabel, "noStudiedLabel")
-        noRemainingLabel = self.findChild(qt.QLabel, "noRemainingLabel")
-        durationLabel = self.findChild(qt.QLabel, "durationLabel")
-        estimationLabel = self.findChild(qt.QLabel, "estimationLabel")
-        progressBar = self.findChild(qt.QProgressBar, "progressBar")
-        progressLabel = self.findChild(qt.QLabel, "progressLabel")
-        graphicLayout = self.findChild(qt.QVBoxLayout, "graphicLayout")
-        continueBtn = self.findChild(qt.QPushButton, "continueBtn")
-        finishBtn = self.findChild(qt.QPushButton, "finishBtn")
+        self.messageLabel = self.findChild(qt.QLabel, "messageLabel")
+        self.noStudiedLabel = self.findChild(qt.QLabel, "noStudiedLabel")
+        self.noRemainingLabel = self.findChild(qt.QLabel, "noRemainingLabel")
+        self.durationLabel = self.findChild(qt.QLabel, "durationLabel")
+        self.estimationLabel = self.findChild(qt.QLabel, "estimationLabel")
+        self.progressBar = self.findChild(qt.QProgressBar, "progressBar")
+        self.progressLabel = self.findChild(qt.QLabel, "progressLabel")
+        self.graphicLayout = self.findChild(qt.QVBoxLayout, "graphicLayout")
+        self.continueBtn = self.findChild(qt.QPushButton, "continueBtn")
+        self.finishBtn = self.findChild(qt.QPushButton, "finishBtn")
 
         # Fill labels
         with open("text/currentSettings.json") as f:
             data = json.load(f)
 
         if noRemaining <= 10:
-            messageLabel.setText(f"{FINAL_MESSAGES[0]}, {data['nickname']}")
+            self.messageLabel.setText(f"{FINAL_MESSAGES[0]}, {data['nickname']}")
         else:
-            messageLabel.setText(f"{MESSAGES[0]}, {data['nickname']}")
+            self.messageLabel.setText(f"{MESSAGES[0]}, {data['nickname']}")
 
-        noStudiedLabel.setText(f"Notes Studied: {noStudied}")
-        noRemainingLabel.setText(f"Notes Remaining: {noRemaining}")
+        self.noStudiedLabel.setText(f"Notes Studied: {noStudied}")
+        self.noRemainingLabel.setText(f"Notes Remaining: {noRemaining}")
 
         m = int(time.strftime("%M", time.gmtime(timeTaken)))
         s = int(time.strftime("%S", time.gmtime(timeTaken)))
-        durationLabel.setText(f"Session Length: {m}m {s}s")
+        self.durationLabel.setText(f"Session Length: {m}m {s}s")
 
         # Calculated estimated finishing time
         etfInSeconds = (timeTaken/noStudied) * noRemaining + time.time()
         etf = datetime.fromtimestamp(etfInSeconds).strftime("%H:%M")
-        estimationLabel.setText(f"Estimated Completion Time: {etf}")
+        self.estimationLabel.setText(f"Estimated Completion Time: {etf}")
 
         # Fill progress bar
         percent = 100*noStudied/(noStudied + noRemaining)
-        progressBar.setValue(percent)
-        progressLabel.setText(f"{round(percent)}% Completed")
+        self.progressBar.setValue(percent)
+        self.progressLabel.setText(f"{round(percent)}% Completed")
 
-        continueBtn.clicked.connect(self.close)
-        finishBtn.clicked.connect(self.navigateToSummary)
+        self.continueBtn.clicked.connect(self.close)
+        self.finishBtn.clicked.connect(self.navigateToSummary)
 
         self.updateAverageScores()
         self.createChart()
@@ -179,10 +179,10 @@ class Window(qt.QMainWindow):
     def updateMenuBar(self):
         """ Updates menu bar with course title """
         # Load widgets
-        courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
-        menuBar = self.findChild(qt.QWidget, "menuBar")
+        self.courseNameLabel = self.findChild(qt.QLabel, "courseNameLabel")
+        self.menuBar = self.findChild(qt.QWidget, "menuBar")
 
-        menuBar.setStyleSheet(f"background-color:{self.color}")
+        self.menuBar.setStyleSheet(f"background-color:{self.color}")
         fontColor = self.color.lstrip("#")
         lv = len(fontColor)
         r, g, b = tuple(int(fontColor[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))

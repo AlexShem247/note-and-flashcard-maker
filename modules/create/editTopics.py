@@ -17,19 +17,19 @@ class Window(qt.QMainWindow):
         self.fillComboBoxes = fillComboBoxes
 
         # Get widgets
-        topicNameEdit = self.findChild(qt.QLineEdit, "topicNameEdit")
-        addTopicBtn = self.findChild(qt.QPushButton, "addTopicBtn")
-        topicListWidget = self.findChild(qt.QListWidget, "topicListWidget")
-        backBtn = self.findChild(qt.QPushButton, "backBtn")
+        self.topicNameEdit = self.findChild(qt.QLineEdit, "topicNameEdit")
+        self.addTopicBtn = self.findChild(qt.QPushButton, "addTopicBtn")
+        self.topicListWidget = self.findChild(qt.QListWidget, "topicListWidget")
+        self.backBtn = self.findChild(qt.QPushButton, "backBtn")
 
         # Add topics
         self.getTopics()
 
         # Bind widgets
-        backBtn.clicked.connect(self.close)
-        topicListWidget.clicked.connect(self.modifyTopic)
-        topicNameEdit.textChanged.connect(self.validateTopic)
-        addTopicBtn.clicked.connect(self.addTopic)
+        self.backBtn.clicked.connect(self.close)
+        self.topicListWidget.clicked.connect(self.modifyTopic)
+        self.topicNameEdit.textChanged.connect(self.validateTopic)
+        self.addTopicBtn.clicked.connect(self.addTopic)
 
 
     def closeEvent(self, event):
@@ -124,14 +124,14 @@ class Widget(qt.QWidget):
         self.removeTopic = removeTopic
 
         # Get widgets
-        topicEdit = self.findChild(qt.QLineEdit, "topicEdit")
-        confirmBtn = self.findChild(qt.QPushButton, "confirmBtn")
-        deleteBtn = self.findChild(qt.QPushButton, "deleteBtn")
+        self.topicEdit = self.findChild(qt.QLineEdit, "topicEdit")
+        self.confirmBtn = self.findChild(qt.QPushButton, "confirmBtn")
+        self.deleteBtn = self.findChild(qt.QPushButton, "deleteBtn")
 
-        topicEdit.setText(topicName)
-        topicEdit.textChanged.connect(self.validateTopicName)
-        confirmBtn.clicked.connect(self.updateTopicName)
-        deleteBtn.clicked.connect(self.deleteTopic)
+        self.topicEdit.setText(topicName)
+        self.topicEdit.textChanged.connect(self.validateTopicName)
+        self.confirmBtn.clicked.connect(self.updateTopicName)
+        self.deleteBtn.clicked.connect(self.deleteTopic)
 
         self.getTopicList()
 

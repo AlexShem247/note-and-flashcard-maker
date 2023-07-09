@@ -454,22 +454,22 @@ class Window(qt.QMainWindow):
         self.show()
 
         # Get widgets
-        importBtn = self.findChild(qt.QPushButton, "importBtn")
-        wordBtn = self.findChild(qt.QPushButton, "wordBtn")
-        dataBtn = self.findChild(qt.QPushButton, "dataBtn")
+        self.importBtn = self.findChild(qt.QPushButton, "importBtn")
+        self.wordBtn = self.findChild(qt.QPushButton, "wordBtn")
+        self.dataBtn = self.findChild(qt.QPushButton, "dataBtn")
 
         # Add Icons
-        importBtn.setIcon(QIcon("images/import.png"))
-        importBtn.setIconSize(QSize(50, 50))
-        wordBtn.setIcon(QIcon("images/doc.png"))
-        wordBtn.setIconSize(QSize(50, 50))
-        dataBtn.setIcon(QIcon("images/zip.png"))
-        dataBtn.setIconSize(QSize(50, 50))
+        self.importBtn.setIcon(QIcon("images/import.png"))
+        self.importBtn.setIconSize(QSize(50, 50))
+        self.wordBtn.setIcon(QIcon("images/doc.png"))
+        self.wordBtn.setIconSize(QSize(50, 50))
+        self.dataBtn.setIcon(QIcon("images/zip.png"))
+        self.dataBtn.setIconSize(QSize(50, 50))
 
         # Bind widgets
-        importBtn.clicked.connect(self.showImportOptions)
-        wordBtn.clicked.connect(self.convertToDoc)
-        dataBtn.clicked.connect(self.exportNotesToZip)
+        self.importBtn.clicked.connect(self.showImportOptions)
+        self.wordBtn.clicked.connect(self.convertToDoc)
+        self.dataBtn.clicked.connect(self.exportNotesToZip)
 
         # Check for notes
         conn = sqlite3.connect(self.databasePath)
@@ -480,8 +480,8 @@ class Window(qt.QMainWindow):
         conn.close()
 
         # Update buttons
-        wordBtn.setEnabled(bool(notes))
-        dataBtn.setEnabled(bool(notes))
+        self.wordBtn.setEnabled(bool(notes))
+        self.dataBtn.setEnabled(bool(notes))
 
         self.generateDoc = GenerateDocThread()
 

@@ -27,31 +27,31 @@ class Window(qt.QWidget):
         self.updateMenuBar()
 
         # Enable multi select
-        subtopicWidget = self.findChild(qt.QListWidget, "subtopicWidget")
-        subtopicWidget.setSelectionMode(qt.QAbstractItemView.ExtendedSelection)
+        self.subtopicWidget = self.findChild(qt.QListWidget, "subtopicWidget")
+        self.subtopicWidget.setSelectionMode(qt.QAbstractItemView.ExtendedSelection)
 
         self.loadTopics()
         self.nextTopic()
         self.show()
 
         # Get widgets
-        topicCombo = self.findChild(qt.QComboBox, "topicCombo")
-        leftBtn = self.findChild(qt.QToolButton, "leftBtn")
-        rightBtn = self.findChild(qt.QToolButton, "rightBtn")
-        selectAllBtn = self.findChild(qt.QPushButton, "selectAllBtn")
-        starBox = self.findChild(qt.QCheckBox, "starBox")
-        weakBox = self.findChild(qt.QCheckBox, "weakBox")
-        startBtn = self.findChild(qt.QPushButton, "startBtn")
-        unselectBtn = self.findChild(qt.QPushButton, "unselectBtn")
+        self.topicCombo = self.findChild(qt.QComboBox, "topicCombo")
+        self.leftBtn = self.findChild(qt.QToolButton, "leftBtn")
+        self.rightBtn = self.findChild(qt.QToolButton, "rightBtn")
+        self.selectAllBtn = self.findChild(qt.QPushButton, "selectAllBtn")
+        self.starBox = self.findChild(qt.QCheckBox, "starBox")
+        self.weakBox = self.findChild(qt.QCheckBox, "weakBox")
+        self.startBtn = self.findChild(qt.QPushButton, "startBtn")
+        self.unselectBtn = self.findChild(qt.QPushButton, "unselectBtn")
 
         # Bind Buttons
-        leftBtn.clicked.connect(lambda: self.changeTopic(-1))
-        rightBtn.clicked.connect(lambda: self.changeTopic(1))
-        topicCombo.currentTextChanged.connect(self.nextTopic)
-        subtopicWidget.itemClicked.connect(self.subtopicUpdate)
-        selectAllBtn.clicked.connect(self.resetTopics)
-        startBtn.clicked.connect(self.startLearning)
-        unselectBtn.clicked.connect(self.unselectList)
+        self.leftBtn.clicked.connect(lambda: self.changeTopic(-1))
+        self.rightBtn.clicked.connect(lambda: self.changeTopic(1))
+        self.topicCombo.currentTextChanged.connect(self.nextTopic)
+        self.subtopicWidget.itemClicked.connect(self.subtopicUpdate)
+        self.selectAllBtn.clicked.connect(self.resetTopics)
+        self.startBtn.clicked.connect(self.startLearning)
+        self.unselectBtn.clicked.connect(self.unselectList)
 
     def unselectList(self):
         """ Unselects all subtopics selected """
@@ -198,7 +198,7 @@ class Window(qt.QWidget):
     def updateMenuBar(self):
         """ Updates menu bar with course title """
         # Load widgets
-        title = self.findChild(qt.QLabel, "title")
+        self.title = self.findChild(qt.QLabel, "title")
         fontColor = self.color.lstrip("#")
         lv = len(fontColor)
         r, g, b = tuple(int(fontColor[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
@@ -207,5 +207,5 @@ class Window(qt.QWidget):
         else:
             fontColor = "#FFFFFF"
 
-        title.setStyleSheet(f"background-color:{self.color}; color:{fontColor};border-style:outset;border-width: "
+        self.title.setStyleSheet(f"background-color:{self.color}; color:{fontColor};border-style:outset;border-width: "
                             f"2px;border-radius:10px;border-color: #303545;")
