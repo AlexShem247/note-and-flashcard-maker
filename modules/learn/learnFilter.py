@@ -30,10 +30,6 @@ class Window(qt.QWidget):
         self.subtopicWidget = self.findChild(qt.QListWidget, "subtopicWidget")
         self.subtopicWidget.setSelectionMode(qt.QAbstractItemView.ExtendedSelection)
 
-        self.loadTopics()
-        self.nextTopic()
-        self.show()
-
         # Get widgets
         self.topicCombo = self.findChild(qt.QComboBox, "topicCombo")
         self.leftBtn = self.findChild(qt.QToolButton, "leftBtn")
@@ -52,6 +48,10 @@ class Window(qt.QWidget):
         self.selectAllBtn.clicked.connect(self.resetTopics)
         self.startBtn.clicked.connect(self.startLearning)
         self.unselectBtn.clicked.connect(self.unselectList)
+
+        self.loadTopics()
+        self.nextTopic()
+        self.show()
 
     def unselectList(self):
         """ Unselects all subtopics selected """
@@ -158,10 +158,13 @@ class Window(qt.QWidget):
         self.subtopicWidget.clear()
 
         # Insert data
-        for subtopic in self.subtopicList[topic]:
-            item = qt.QListWidgetItem(subtopic)
-            self.subtopicWidget.addItem(item)
-            item.setSelected(subtopic in self.currentTopicList[topic])
+        try:
+            for subtopic in self.subtopicList[topic]:
+                item = qt.QListWidgetItem(subtopic)
+                self.subtopicWidget.addItem(item)
+                item.setSelected(subtopic in self.currentTopicList[topic])
+        except KeyError:
+            pass
 
         # Enable buttons
         self.leftBtn.setEnabled(self.topicIndex > 0)

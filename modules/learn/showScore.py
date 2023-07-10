@@ -191,5 +191,5 @@ class Window(qt.QMainWindow):
         else:
             fontColor = "#FFFFFF"
 
-        courseNameLabel.setText(self.courseName + " - Learn Notes")
-        courseNameLabel.setStyleSheet(f"color:{fontColor}")
+        self.courseNameLabel.setText(self.courseName + " - Learn Notes")
+        self.courseNameLabel.setStyleSheet(f"color:{fontColor}")

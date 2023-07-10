@@ -221,7 +221,7 @@ class Window(qt.QMainWindow):
         self.totalNotesCompleted = 0
         self.correctCounter = 0
         self.incorrectCounter = 0
-        self.timeStarted = time()
+        self.timeStarted = time.time()
         self.factCorrect = 0
         self.defCorrect = 0
         self.formCorrect = 0
@@ -448,7 +448,7 @@ class Window(qt.QMainWindow):
         self.back = False
         self.w = showSummary.Window(self.superClass, self.courseName, self.color, self.factCorrect, self.defCorrect,
                                     self.formCorrect, self.processCorrect, self.diagramCorrect, self.tableCorrect,
-                                    len(self.noteList), time() - self.timeStarted, self.correctCounter,
+                                    len(self.noteList), time.time() - self.timeStarted, self.correctCounter,
                                     self.incorrectCounter, self.scorePerTopic)
         self.w.show()
         self.close()
@@ -990,7 +990,7 @@ class Window(qt.QMainWindow):
             # Send user to learn window
             self.back = False
             self.w = showScore.Window(self, self.courseName, self.color, self.showNextNote,
-                                      self.totalNotesCompleted, len(self.noteList), time() - self.timeStarted,
+                                      self.totalNotesCompleted, len(self.noteList), time.time() - self.timeStarted,
                                       self.correctCounter, self.incorrectCounter, self.finishStudying)
             self.w.show()
             self.close()

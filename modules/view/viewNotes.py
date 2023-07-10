@@ -56,9 +56,6 @@ class Window(qt.QMainWindow):
         else:
             self.loadNotes()
 
-        self.updateNavigation()
-        self.show()
-
         # Get widgets
         self.editBtn = self.findChild(qt.QPushButton, "editBtn")
         self.starBtn = self.findChild(qt.QPushButton, "starBtn")
@@ -107,6 +104,9 @@ class Window(qt.QMainWindow):
         self.goDownAction.setShortcut("down")
         self.goDownAction.triggered.connect(self.flipNote)
         self.addAction(self.goDownAction)
+
+        self.updateNavigation()
+        self.show()
 
     def spinboxUpdate(self):
         """ Runs when spinbox is updated """
