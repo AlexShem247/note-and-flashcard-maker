@@ -374,6 +374,13 @@ class Doc:
                         font = run.font
                         font.name, font.size = "Arial", docx.shared.Pt(12)
 
+        # Change font and style for the first row
+        for i, cell in enumerate(table.rows[0].cells):
+            for paragraph in cell.paragraphs:
+                for run in paragraph.runs:
+                    run.font.bold = True
+                    run.font.name, run.font.size = "Arial", docx.shared.Pt(12)
+
         for row in table.rows:
             row.height = docx.shared.Cm(0.7)
 

@@ -53,8 +53,8 @@ def show_exception_and_exit(exc_type, exc_value, tb):
     ctypes.windll.user32.MessageBoxW(0, f"{exc_type.__name__}: {exc_value}", "An Unexpected Error has occurred", 0x10)
 
 
-#sys.excepthook = show_exception_and_exit # TODO Add this before pushing
-sys.excepthook = lambda exc_type, exc_value, tb: (traceback.print_exception(exc_type, exc_value, tb), sys.exit(-1))
+# sys.excepthook = lambda exc_type, exc_value, tb: (traceback.print_exception(exc_type, exc_value, tb), sys.exit(-1))
+sys.excepthook = show_exception_and_exit
 
 
 class Window(qt.QMainWindow):

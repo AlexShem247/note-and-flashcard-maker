@@ -1,4 +1,5 @@
 import PyQt5.QtWidgets as qt
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont, QIcon, QKeySequence
 import os
 import sqlite3
@@ -159,11 +160,63 @@ class CreateWindow(qt.QMainWindow):
         self.factBtn.setChecked(True)
         self.noteType = self.factBtn
 
+        # Bind context menus
+        self.prevNoteBtn.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.prevNoteBtn.customContextMenuRequested.connect(self.showPreviousContextMenu)
+        self.nextNoteBtn.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.nextNoteBtn.customContextMenuRequested.connect(self.showNextContextMenu)
+
         # Fill in combo boxes
         self.getCourseData()
         self.fillComboBoxes()
         self.updateDiagramBtn()
         self.updateNoteNav()
+
+    def showPreviousContextMenu(self, pos):
+        contextMenu = qt.QMenu(self)
+
+        action = qt.QAction("Jump to next Topic", self)
+        action.triggered.connect(lambda: self.handleContextMenu(-1))
+        contextMenu.addAction(action)
+
+        contextMenu.exec_(self.prevNoteBtn.mapToGlobal(pos))
+
+    def showNextContextMenu(self, pos):
+        contextMenu = qt.QMenu(self)
+
+        action = qt.QAction("Jump to next Topic", self)
+        action.triggered.connect(lambda: self.handleContextMenu(1))
+        contextMenu.addAction(action)
+
+        contextMenu.exec_(self.nextNoteBtn.mapToGlobal(pos))
+
+    def handleContextMenu(self, option):
+        if option == 1:
+            sym = ">"
+        elif option == -1:
+            sym = "<"
+
+        conn = sqlite3.connect(self.databasePath)
+        c = conn.cursor()
+        c.execute(f"SELECT t.topicID FROM notes n JOIN subtopics s on n.subtopicID = s.subtopicID \
+                    JOIN topics t on s.topicID = t.topicID WHERE noteID = {self.noteID}")
+        record = c.fetchone()
+        if record:
+            topicID = record[0]
+        else:
+            topicID = 0
+
+        c.execute(f"SELECT noteID FROM notes n JOIN subtopics s on n.subtopicID = s.subtopicID \
+         JOIN topics t on s.topicID = t.topicID WHERE noteID {sym} {self.noteID} AND t.topicID != {topicID} \
+         ORDER BY noteID DESC")
+        record = c.fetchone()
+        if record:
+            nextNoteId = record[0]
+        else:
+            nextNoteId = self.noteID
+
+        conn.close()
+        self.nextNote(nextNoteId - self.noteID)
 
     def spinboxUpdate(self):
         """ Runs when spinbox is updated """

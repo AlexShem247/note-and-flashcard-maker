@@ -116,10 +116,10 @@ class Window(qt.QMainWindow):
         """ Navigates user to create notes menu """
         if self.textbookPath[0]:
             self.w = createNotes.Window(self, self.courseName, self.color, self.textbookPath,
-                                        sendToNote=self.noteID, closeFunction=self.loadNotes)
+                                        sendToNote=self.noteList[self.noteID-1]["noteID"], closeFunction=self.loadNotes)
         else:
             self.w = createNotesNoPDF.Window(self, self.courseName, self.color, self.textbookPath,
-                                             sendToNote=self.noteID, closeFunction=self.loadNotes)
+                                             sendToNote=self.noteList[self.noteID-1]["noteID"], closeFunction=self.loadNotes)
         self.w.show()
         self.hide()
 
@@ -403,7 +403,7 @@ class Window(qt.QMainWindow):
             pixmap = QPixmap(f"images/temp/{path}.png")
 
             if h < pixmap.height() or note["type"] == "Table":
-                pixmap = pixmap.scaledToHeight(h)
+                pixmap = pixmap.scaledToHeight(int(h))
 
             self.diagramLabel.setPixmap(pixmap)
 

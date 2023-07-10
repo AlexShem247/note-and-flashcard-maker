@@ -261,8 +261,9 @@ class Window(qt.QMainWindow):
         # Create images
         conn = sqlite3.connect(self.databasePath)
         c = conn.cursor()
+        imageNo = 1
 
-        for i, topic in enumerate(self.topicList, start=1):
+        for topic in self.topicList:
             plt.rcdefaults()
             fig, ax = plt.subplots()
 
@@ -276,39 +277,41 @@ class Window(qt.QMainWindow):
                       f"WHERE t.topicName = '{topic}'")
 
             noteData = c.fetchall()
-            topics = list(set([note[0] for note in noteData]))
-            scores = {}
+            if noteData:
+                topics = list(set([note[0] for note in noteData]))
+                scores = {}
 
-            # Modify data
-            for topicName in topics:
-                scores[topicName] = []
+                # Modify data
+                for topicName in topics:
+                    scores[topicName] = []
 
-            for note in noteData:
-                scores[note[0]].append(note[1])
+                for note in noteData:
+                    scores[note[0]].append(note[1])
 
-            # Get average score
-            for score in scores:
-                average = sum(scores[score]) / len(scores[score])
-                if average > 5:
-                    average = 5
-                scores[score] = average
+                # Get average score
+                for score in scores:
+                    average = sum(scores[score]) / len(scores[score])
+                    if average > 5:
+                        average = 5
+                    scores[score] = average
 
-            subtopics = list(scores.keys())
-            subtopicScores = list(scores.values())
+                subtopics = list(scores.keys())
+                subtopicScores = list(scores.values())
 
-            ax.barh(subtopics, subtopicScores, align="center")
-            ax.set_yticks(subtopics)
-            ax.set_yticklabels(subtopics, fontsize=12)
-            ax.invert_yaxis()
-            ax.set_xlabel("Average Score", fontsize=12)
-            ax.set_title(topic, fontsize=24)
-            plt.xlim(0, 5)
-            plt.savefig(f"images/temp/{i}.png", bbox_inches="tight")
-            plt.close("all")
+                ax.barh(subtopics, subtopicScores, align="center")
+                ax.set_yticks(subtopics)
+                ax.set_yticklabels(subtopics, fontsize=12)
+                ax.invert_yaxis()
+                ax.set_xlabel("Average Score", fontsize=12)
+                ax.set_title(topic, fontsize=24)
+                plt.xlim(0, 5)
+                plt.savefig(f"images/temp/{imageNo}.png", bbox_inches="tight")
+                plt.close("all")
 
-            pixmap = QPixmap(f"images/temp/{i}.png")  # Create image array
-            pixmap = pixmap.scaled(QSize(1350, 900), transformMode=Qt.SmoothTransformation)
-            self.imageList.append(pixmap)
+                pixmap = QPixmap(f"images/temp/{imageNo}.png")  # Create image array
+                pixmap = pixmap.scaled(QSize(1350, 900), transformMode=Qt.SmoothTransformation)
+                self.imageList.append(pixmap)
+                imageNo += 1
 
         conn.close()
 
@@ -324,7 +327,7 @@ class Window(qt.QMainWindow):
         self.chartLayout.addWidget(label)
 
         self.previousBtn.setEnabled(self.topicListIndex > 0)
-        self.forwardBtn.setEnabled(self.topicListIndex < len(self.topicList))
+        self.forwardBtn.setEnabled(self.topicListIndex < len(self.imageList)-1)
 
 
     def closeEvent(self, event):
